@@ -14,8 +14,8 @@ if (PHP_SAPI == 'cli-server') {
     }
 }
 
-$file = '/../vendor/autoload.php';
-require file_exists(__DIR__ . $file) ? __DIR__ . $file : __DIR__ . '/..' . $file;
+$file = 'vendor/autoload.php';
+require file_exists($file) ? $file : '../' . $file;
 unset($file);
 
 session_start();
