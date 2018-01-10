@@ -1,0 +1,12 @@
+<div class="mail">
+    <h2 class="mail__title">Get in touch</h2>
+    <form action="{{ base_url() }}/contact" method="POST" class="mail__form">
+        <input name="f_name" type="text" class="mail__form__input" placeholder="First Name">
+        <input name="l_name" type="text" class="mail__form__input" placeholder="Last Name">
+        <input name="email" type="text" class="mail__form__input" placeholder="Email">
+        <input name="phone" type="text" class="mail__form__input" placeholder="Phone Number">
+        <input name="subject" type="text" class="mail__form__input mail__form__input--l" placeholder="Subject">
+        <textarea name="message" class="mail__form__textarea" placeholder="Message"></textarea>
+        <input type="submit" class="mail__form__submit" value="Send message">
+    </form>
+</div>

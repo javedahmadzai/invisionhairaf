@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Invision Hair Afghanistan</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
+        <link rel="stylesheet" href="{{ base_url() }}/css/app.css">
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+        <script
+          src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+          integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+          crossorigin="anonymous"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jssor-slider/26.1.5/jssor.slider.min.js"
+            integrity="sha256-ZJp7JoYzciuR13JKhGMZps165NT5oV9uEjTixcmEiOc="
+            crossorigin="anonymous"></script>
+    </head>
+    <body>
+        {% include "includes/header.twig" %}
+        {% block content %}{% endblock %}
+        {% include "includes/footer.twig" %}
+        <script src="{{ base_url() }}/js/app.js"></script>
+    </body>
+</html>

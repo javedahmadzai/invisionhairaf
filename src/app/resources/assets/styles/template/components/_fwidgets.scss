@@ -1,0 +1,90 @@
+.fwidgets {
+  display: flex;
+  flex-direction: column;
+
+  @media #{$medium} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__item {
+    padding: 2rem;
+    border-top: 1px solid $border-light;
+    font-size: 0.938em;
+    font-weight: 400;
+    line-height: 1.8rem;
+
+    @media #{$medium} {
+      border-top: 0;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    &:first-child {
+      border-top: 0;
+    }
+
+    h4 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      font-weight: 400;
+    }
+
+    p {
+      color: $color-light;
+
+      @media #{$medium} {
+        max-width: 360px;
+      }
+    }
+
+    a {
+      color: $color-light;
+      text-decoration: none;
+
+      &:hover {
+        color: $color1;
+      }
+    }
+  }
+}
+
+.sm-icon {
+  position: relative;
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0.5rem 0.5rem 0 0;
+  border: 0.1rem solid $color-light;
+  border-radius: 50%;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  line-height: 2.5rem;
+  text-decoration: none;
+
+  span {
+    display: none;
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+  }
+
+  &:hover {
+    border-color: $color1;
+    background: $color1;
+
+    i {
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.footer {
+  width: 100%;
+  background-color: $background-dark;
+
+  .container {
+    width: 100%;
+    margin: 0;
+
+    @media #{$medium} {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@import 'components/fwidgets';
+@import 'components/copyrights';

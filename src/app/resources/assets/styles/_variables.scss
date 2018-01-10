@@ -1,0 +1,47 @@
+//-----------------------------------------------------------
+// Media queries & Content size
+//-----------------------------------------------------------
+$small: '(max-width: 35em)';
+$medium: '(min-width: 40em)';
+$large: '(min-width: 66em)';
+$content-width: 38rem;
+$content-width-wide: 66rem;
+
+//-----------------------------------------------------------
+// Color Scheme
+//-----------------------------------------------------------
+$color1: #860f14;
+$color2: #2680ff;
+$color3: #333333;
+$white: #ffffff;
+$background-light: #ffffff;
+$background-dark: #f7f7f7;
+$background-hover: #f8f8f8;
+$color-dark: #191919;
+$color-light: #4d4d4d;
+$color-hover: #f8f8f8;
+$border-dark: #111111;
+$border-light: #dddddd;
+
+//-----------------------------------------------------------
+// Website globals
+//-----------------------------------------------------------
+$body-background: #ffffff;
+$body-font: 400 100% / 1.5 'Roboto', sans-serif;
+$footer-background: #45474e;
+
+//#323232;
+
+// Defaults
+$default-background: #ffffff;
+$default-foreground: #f7f7f7;
+$default-color: #263238;
+$default-text: #4d4d4d;
+$default-text-light: #aaaaaa;
+$default-hover: #f8f8f8;
+$default-border: #dddddd;
+$default-shadow: rgba(0, 0, 0, 0.05);
+
+// Theme
+$theme-background: #f16334;
+$theme-color: #42093d;

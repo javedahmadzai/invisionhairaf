@@ -1,0 +1,23 @@
+.header {
+  @extend %navbar-shadow;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: $background-light;
+
+  .container {
+    width: 100%;
+    margin: 0;
+
+    @media #{$medium} {
+      display: flex;
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@import 'components/topbar';
+@import 'components/navbar';

@@ -1,0 +1,28 @@
+body {
+  background-color: $body-background;
+  font: $body-font;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+pre {
+  overflow: auto;
+}
+
+ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

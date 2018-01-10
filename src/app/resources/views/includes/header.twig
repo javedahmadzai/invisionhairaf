@@ -1,0 +1,26 @@
+<header class="header">
+    <div class="container">
+        <div class="topbar">
+            <a href="{{ base_url() }}/" class="site-logo"><img src="{{ base_url() }}/img/logo1.png" alt=""></a>
+            <button id="toggle" class="toggle">
+                <i class="toggle__bar"></i>
+                <i class="toggle__bar"></i>
+                <i class="toggle__bar"></i>
+            </button>
+        </div>
+        <div id="navbar" class="navbar">
+            <a href="{{ base_url() }}/" class="navbar__link">Home</a>
+            <a href="{{ base_url() }}/services" class="navbar__link">Services</a>
+            <a href="{{ base_url() }}/products" class="navbar__link navbar__link--toggle">Products</a>
+            <div class="navbar__dropdown">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+                <a href="#">Link 4</a>
+                <a href="#">Link 5</a>
+            </div>
+            <a href="{{ base_url() }}/about" class="navbar__link">About Us</a>
+            <a href="{{ base_url() }}/contact" class="navbar__link">Contact Us</a>
+        </div>
+    </div>
+</header>

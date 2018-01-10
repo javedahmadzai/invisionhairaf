@@ -1,0 +1,95 @@
+.accordion {
+  h3 {
+    padding: 0.5rem 1rem;
+    font-size: 1em;
+    color: #fff;
+    cursor: pointer;
+    background: #45474e;
+    border: 1px solid #eeeeee;
+    outline: 0;
+  }
+
+  div {
+    padding: 1rem;
+    font-size: 0.9em;
+    background: #f8f8f8;
+    border: 1px solid #eeeeee;
+
+    blockquote {
+      position: relative;
+      padding: 1rem;
+      margin: 0;
+      font-style: italic;
+      color: #331f0c;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-family: FontAwesome;
+        font-size: 0.7em;
+        content: '\f10d';
+      }
+
+      &::after {
+        padding-left: 0.4rem;
+        font-family: FontAwesome;
+        font-size: 0.7em;
+        content: '\f10e';
+      }
+    }
+  }
+
+  .ui-accordion-header-collapsed::after {
+    float: right;
+    font-family: FontAwesome;
+    content: '\f054';
+  }
+
+  .ui-accordion-header-active::after {
+    float: right;
+    font-family: FontAwesome;
+    content: '\f078';
+  }
+}
+
+.team {
+  background: #f9f9f9;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 0 2rem 0;
+}
+
+.card {
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  @include animate(fadeIn, 1s);
+
+  img {
+    width: 250px;
+    height: 230px;
+    background: #f8f8f8;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  .info {
+    padding: 1.5rem;
+    line-height: 2.2rem;
+    color: #333;
+
+    .title {
+      color: #999;
+      font-style: italic;
+    }
+  }
+}
+
+.space {
+  margin: 6rem 0;
+}

@@ -1,0 +1,23 @@
+@charset 'utf-8';
+
+// Setting & Mixins
+@import 'variables';
+@import 'placeholders';
+@import 'animations';
+@import 'mixins';
+
+// Global
+@import 'reset';
+@import 'global';
+
+// Pages
+@import 'pages/contact';
+
+// Components
+@import 'template/layout';
+@import 'template/header';
+@import 'template/footer';
+@import 'template/plate';
+@import 'template/section';
+@import 'template/blocks';
+@import 'template/clients';

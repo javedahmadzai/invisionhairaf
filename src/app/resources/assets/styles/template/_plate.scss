@@ -1,0 +1,37 @@
+.plate {
+  display: none;
+
+  @media #{$medium} {
+    display: block;
+    height: 100px;
+    background-repeat: no-repeat;
+  }
+}
+
+.waves-wrapper {
+  position: relative;
+  width: 100%;
+  height: 124px;
+  transform: rotate(180deg);
+  overflow: hidden;
+}
+
+.waves {
+  position: absolute;
+  top: 40px;
+  width: calc(100% + 400px);
+  margin: 0 0 0 -200px;
+
+  path {
+    opacity: 0.4;
+    animation: 14s ease-in-out infinite alternate waveAnimateA;
+
+    &:first-child {
+      animation: 14s ease-in-out infinite alternate waveAnimateB;
+    }
+
+    &:last-child {
+      animation: 14s ease-in-out infinite alternate waveAnimateC;
+    }
+  }
+}

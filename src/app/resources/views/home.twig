@@ -1,0 +1,70 @@
+{% extends "layouts/master.twig" %}
+
+{% block content %}
+    {% include "includes/slider.twig" %}
+    {% include "includes/plate.twig" %}
+    <div class="container">
+        <h2 class="why-us">Why us?</h2>
+        <div class="blocks">
+            <div class="block">
+                <h2 class="block__title">Toppik Instant Hair Solution</h2>
+                <div class="block__content" style="position:relative;">
+                    <p>Instant Hair Solution for beautiy.</p>
+                    <p style="width:300px">Get the look of fuller, thicker hair with any of these Toppik products. Whether you’re looking for hair thickening products or products to give hair volume, Toppik offers a full line of thinning hair solutions.</p>
+                    <img style="position: absolute; width:200px; top:-50px; opacity:1; right:10px;" src="{{ base_url() }}/img/products/fibers_spray.png" alt="Fibres Spray">
+                </div>
+            </div>
+            <div class="block">
+                <h2 class="block__title">Problem Free Solution</h2>
+                <div class="block__content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, hic.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae facere maxime nostrum tempore similique quaerat velit ad, rerum ullam repellat.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore architecto maiores consectetur cum minima veniam!</p>
+                </div>
+            </div>
+            <div class="block">
+                <h2 class="block__title">Cheap and Easy</h2>
+                <div class="block__content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, hic.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae facere maxime nostrum tempore similique quaerat velit ad, rerum ullam repellat.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore architecto maiores consectetur cum minima veniam!</p>
+                </div>
+            </div>
+        </div>
+        <div class="clients">
+            <h2 class="clients__heading">Clients &amp; Testimonials</h2>
+            <p class="clients__rate">More then 127 000 of happy customers</p>
+            <div class="container">
+                <div class="client">
+                    <img src="{{ base_url()}}/img/client.jpg" alt="" class="client__image">
+                    <div class="client__info">
+                        <h3>Some Name</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum minima enim. Nulla laboriosam expedita optio nobis maxime, veritatis illo.</p>
+                    </div>
+                </div>
+                 <div class="client">
+                    <img src="{{ base_url()}}/img/client.jpg" alt="" class="client__image">
+                    <div class="client__info">
+                        <h3>Some Name</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum minima enim. Nulla laboriosam expedita optio nobis maxime, veritatis illo.</p>
+                    </div>
+                </div>
+                 <div class="client">
+                    <img src="{{ base_url()}}/img/client.jpg" alt="" class="client__image">
+                    <div class="client__info">
+                        <h3>Some Name</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum minima enim. Nulla laboriosam expedita optio nobis maxime, veritatis illo.</p>
+                    </div>
+                </div>
+                 <div class="client">
+                    <img src="{{ base_url()}}/img/client.jpg" alt="" class="client__image">
+                    <div class="client__info">
+                        <h3>Some Name</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum minima enim. Nulla laboriosam expedita optio nobis maxime, veritatis illo.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="contact-us" style="border:0;padding:1rem 5rem;background:#333;color:#fff; font-size:1rem; font-weight:600; pointer:cursor; outline:0; margin:0 auto; display: block;"><a href="{{ base_url() }}/contact" style="color:inherit;">Contact Us</a></button>
+        </div>
+    </div>
+{% endblock %}

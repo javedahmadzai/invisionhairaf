@@ -1,0 +1,36 @@
+<div id="map" class="map"></div>
+<style>
+.map {
+    width: 100%;
+    height: 500px;
+}
+</style>
+<script>
+function initMap() {
+    var settings = {
+        position: {
+            lat: 34.544838,
+            lng: 69.152089
+        },
+        title: "Invision Hair Afghanistan",
+        content: "Invision Hair Afghanistan"
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: settings.position
+    });
+
+    var marker = new google.maps.Marker({
+      position: settings.position,
+      map: map,
+    });
+
+    var infowindow = new google.maps.InfoWindow({
+        content: settings.content
+    });
+
+    infowindow.open(map, marker);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyHWm6orZclDIdEbPHVroYgdTEMkKpzc4&callback=initMap" async defer></script>
