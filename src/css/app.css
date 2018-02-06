@@ -506,6 +506,44 @@ a:hover {
 
 .form--wide {
   width: 100%;
+  color: #d9edf7;
+  background: #31708f;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+}
+
+.form__heading {
+  text-align: center;
+  margin-bottom: 1.3rem;
+  font-weight: 300;
+}
+
+.form__message {
+  display: block;
+  padding: 0.5rem;
+  color: #8a6d3b;
+  background: #fcf8e3;
+  border: 1px solid #faebcc;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.form__message--error {
+  color: #a94442;
+  background: #f2dede;
+  border: 1px solid #ebccd1;
+}
+
+.form__message--success {
+  color: #3c763d;
+  background: #dff0d8;
+  border: 1px solid #d6e9c6;
+}
+
+.form__message--info {
+  color: #31708f;
+  background: #d9edf7;
+  border: 1px solid #bce8f1;
 }
 
 .form__item {
@@ -527,8 +565,12 @@ a:hover {
   width: 100%;
   display: block;
   border: 1px solid #eee;
-  max-width: 600px;
+  max-width: 690px;
   outline: none;
+  font-size: 1rem;
+  font-family: arial;
+  padding: 0.5rem;
+  color: #666;
 }
 
 .form__item__file {
@@ -620,6 +662,71 @@ a:hover {
   text-decoration: none;
   border: 1px solid #eee;
   color: #eee;
+}
+
+.list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.list__item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem 0;
+  border-top: 2px solid #eee;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.list__item:nth-child(odd) {
+  background: #f1f1f1;
+}
+
+.list__item__image {
+  -webkit-flex-basis: 28%;
+      -ms-flex-preferred-size: 28%;
+          flex-basis: 28%;
+}
+
+.list__item__image img {
+  width: 200px;
+  height: 200px;
+}
+
+.list__item__description {
+  -webkit-flex-basis: 66%;
+      -ms-flex-preferred-size: 66%;
+          flex-basis: 66%;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.list__item__action {
+  -webkit-flex-basis: 8%;
+      -ms-flex-preferred-size: 8%;
+          flex-basis: 8%;
+  padding-left: 1rem;
+}
+
+.list__item__action button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.list__item__action button img {
+  width: 40px;
 }
 
 .contact {

@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container">
         {% for index, image in images %}
-            <img src="{{ base_url() }}/img/gallery/{{image.url}}" width="200" height="200"><br>
+            <img src="{{ base_url() }}/img/gallery/{{image.url}}" width="200" height="200">
         {% endfor %}
     </div>
 {% endblock %}

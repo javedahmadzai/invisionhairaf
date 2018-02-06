@@ -1,0 +1,45 @@
+.list {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: flex;
+    padding: 2rem 0;
+    border-top: 2px solid #eee;
+    justify-content: space-between;
+
+    &:nth-child(odd) {
+      background: #f1f1f1;
+    }
+
+    &__image {
+      flex-basis: 28%;
+
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    &__description {
+      flex-basis: 66%;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    &__action {
+      flex-basis: 8%;
+      padding-left: 1rem;
+
+      button {
+        border: 0;
+        background: none;
+        cursor: pointer;
+
+        img {
+          width: 40px;
+        }
+      }
+    }
+  }
+}

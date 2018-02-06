@@ -3,8 +3,10 @@
 {% block content %}
     <div class="container">
         <form action="{{ path_for('admin.login') }}" method="post" class="form">
-            <h1 style="text-align:center; margin-bottom:1.3rem; font-weight:300;">Webmaster</h1>
-            <p style="color:red;">{{ error }}</p>
+            <h1 class="form__heading">Webmaster</h1>
+            {% if error %}
+            <p class="form__message form__message--error"><b>Error:</b> {{ error }}</p>
+            {% endif %}
             <div class="form__item">
                 <label for="username" class="form__item__label">Username: </label>
                 <input type="text" name="username" placeholder="Type username..." class="form__item__input">

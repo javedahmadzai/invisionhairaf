@@ -9,7 +9,10 @@ class Gallery extends Controller
 {
     public function index($request, $response)
     {
+        $images = Image::all();
+
         return $this->view->render($response, 'admin/gallery.twig', [
+            'images'  => $images,
             'error'   => $this->flash->getFirstMessage('admin.gallery-error'),
             'success' => $this->flash->getFirstMessage('admin.gallery-success'),
         ]);
@@ -39,6 +42,15 @@ class Gallery extends Controller
         $image->save();
 
         $this->flash->addMessage('admin.gallery-success', 'Successfully Uploaded Files');
+
+        return $response->withRedirect($this->router->pathFor('admin.gallery'));
+    }
+
+    public function deleteImage($request, $response, $args = null)
+    {
+        $image = Image::find($args['id']);
+        unlink($this->settings['gallery_path'] . DIRECTORY_SEPARATOR . $image->url);
+        $image->delete();
 
         return $response->withRedirect($this->router->pathFor('admin.gallery'));
     }

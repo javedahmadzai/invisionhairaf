@@ -3,9 +3,13 @@
 {% block admin_heading %}Gallery Management{% endblock %}
 
 {% block admin_content %}
-    <p>{{success}}</p>
-    <p>{{error}}</p>
     <form action="{{path_for('admin.gallery')}}" method="post" enctype="multipart/form-data" class="form form--wide">
+        <h1 class="form__heading">Upload Images</h1>
+        {% if error %}
+        <p class="form__message form__message--error"><b>Error:</b> {{ error }}</p>
+        {% elseif success %}
+        <p class="form__message form__message--success"><b>Success:</b> {{ success }}</p>
+        {% endif %}
         <div class="form__item">
             <label for="images" class="form__item__label">Images: </label>
             <input type="file" name="image" accept=".jpg, .jpeg, .png" class="form__item__file">
@@ -19,4 +23,24 @@
         </div>
         {{ csrf_field() | raw }}
     </form>
+    <div class="list">
+    <h1 class="form__heading">Images Uploaded</h1>
+    {% for index, image in images %}
+        <div class="list__item">
+            <div class="list__item__image">
+                <img src="{{ base_url() }}/img/gallery/{{image.url}}" width="200" height="200">
+            </div>
+            <div class="list__item__description">
+                <p>{{ image.description }}</p>
+            </div>
+            <div class="list__item__action">
+                <form action="{{ path_for('admin.gallery') }}/{{image.id}}" method="post">
+                    <input type="hidden" name="_METHOD" value="DELETE">
+                    <button><img src="{{ base_url() }}/img/misc/delete-item.png" alt="Delete Image"></button>
+                    {{ csrf_field() | raw }}
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
 {% endblock %}
