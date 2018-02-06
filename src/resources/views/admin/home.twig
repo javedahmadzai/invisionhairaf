@@ -1,8 +1,7 @@
-{% extends "layouts/master.twig" %}
+{% extends "layouts/admin.twig" %}
 
-{% block content %}
-    <div class="container">
-        <a href="{{ base_url() }}/admin/gallery">Add Images to Client's Gallery</a>
-        <a href="{{ base_url() }}/admin/logout">Logout</a>
-    </div>
+{% block admin_heading %}Home{% endblock %}
+
+{% block admin_content %}
+    Home
 {% endblock %}

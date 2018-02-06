@@ -18,4 +18,5 @@ $app->group('/admin', function () {
     $this->get('', '\App\Controllers\Admin\Home:index')->setName('admin.home');
     $this->get('/logout', '\App\Controllers\Admin\Auth:logout')->setName('admin.logout');
     $this->get('/gallery', '\App\Controllers\Admin\Gallery:index')->setName('admin.gallery');
+    $this->post('/gallery', '\App\Controllers\Admin\Gallery:uploadImages');
 })->add(new App\Middlewares\Admin($container));

@@ -5,6 +5,10 @@
   flex-direction: column;
   width: 50%;
 
+  &--wide {
+    width: 100%;
+  }
+
   &__item {
     margin: 0.5rem 0;
 
@@ -17,6 +21,18 @@
       padding: 0.5rem;
       border: 1px solid #eee;
       outline: 0;
+    }
+
+    &__textarea {
+      width: 100%;
+      display: block;
+      border: 1px solid #eee;
+      max-width: 600px;
+      outline: none;
+    }
+
+    &__file {
+      display: inline-block;
     }
 
     &__submit {

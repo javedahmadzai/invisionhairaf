@@ -1,9 +1,22 @@
-{% extends "layouts/master.twig" %}
+{% extends "layouts/admin.twig" %}
 
-{% block content %}
-    <div class="container">
-        <div class="panel">
+{% block admin_heading %}Gallery Management{% endblock %}
 
+{% block admin_content %}
+    <p>{{success}}</p>
+    <p>{{error}}</p>
+    <form action="{{path_for('admin.gallery')}}" method="post" enctype="multipart/form-data" class="form form--wide">
+        <div class="form__item">
+            <label for="images" class="form__item__label">Images: </label>
+            <input type="file" name="image" accept=".jpg, .jpeg, .png" class="form__item__file">
         </div>
-    </div>
+        <div class="form__item">
+            <label for="description" class="form__item__label">Description: </label>
+            <textarea name="description" rows="8" class="form__item__textarea"></textarea>
+        </div>
+        <div class="form__item">
+            <input type="submit" name="submit" value="Insert Image" class="form__item__submit">
+        </div>
+        {{ csrf_field() | raw }}
+    </form>
 {% endblock %}

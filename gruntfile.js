@@ -58,7 +58,7 @@ module.exports = function (grunt) {
                 options: {
                     livereload: true
                 },
-                files: ['src/app/resources/**/**.*']
+                files: ['src/resources/**/**.*']
             }
         }
     });

@@ -1,19 +1,19 @@
 module.exports = {
 
     // Assets Path
-    assets: 'src/app/resources/assets',
+    assets: 'src/resources/assets',
 
     // Styles
     styles: {
-        dir:    'src/app/resources/assets/styles/**/*.scss',
-        src:    'src/app/resources/assets/styles/app.scss',
+        dir:    'src/resources/assets/styles/**/*.scss',
+        src:    'src/resources/assets/styles/app.scss',
         dist:   'src/css/app.css'
     },
 
     // Scripts
     scripts: {
-        dir:    'src/app/resources/assets/scripts/**/*.js',
-        src:    'src/app/resources/assets/scripts/app.js',
+        dir:    'src/resources/assets/scripts/**/*.js',
+        src:    'src/resources/assets/scripts/app.js',
         dist:   'src/js/app.js'
     },
 

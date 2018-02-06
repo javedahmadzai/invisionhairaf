@@ -504,6 +504,10 @@ a:hover {
   width: 50%;
 }
 
+.form--wide {
+  width: 100%;
+}
+
 .form__item {
   margin: 0.5rem 0;
 }
@@ -517,6 +521,18 @@ a:hover {
   padding: 0.5rem;
   border: 1px solid #eee;
   outline: 0;
+}
+
+.form__item__textarea {
+  width: 100%;
+  display: block;
+  border: 1px solid #eee;
+  max-width: 600px;
+  outline: none;
+}
+
+.form__item__file {
+  display: inline-block;
 }
 
 .form__item__submit {
@@ -534,6 +550,76 @@ a:hover {
 .form__item__submit:hover {
   background: #eaeaea;
   border: 2px solid #eee;
+}
+
+.panel {
+  padding: 2rem 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.panel__heading {
+  -webkit-box-flex: 100%;
+  -webkit-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  padding: 1rem;
+  background: #333;
+  color: #fff;
+}
+
+.panel__left {
+  -webkit-box-flex: 25%;
+  -webkit-flex: 25%;
+      -ms-flex: 25%;
+          flex: 25%;
+  height: 100%;
+  border: 1px solid #eee;
+}
+
+.panel__left a {
+  display: block;
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem;
+  color: #111;
+  text-decoration: none;
+}
+
+.panel__left a:hover {
+  background: #f8f8f8;
+}
+
+.panel__right {
+  -webkit-box-flex: 75%;
+  -webkit-flex: 75%;
+      -ms-flex: 75%;
+          flex: 75%;
+  height: 100%;
+  background: #f8f8f8;
+  padding: 1rem;
+  min-height: 400px;
+}
+
+.panel__logout {
+  float: right;
+  color: #333;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  background: #efefef;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+
+.panel__logout:hover {
+  background: transparent;
+  text-decoration: none;
+  border: 1px solid #eee;
+  color: #eee;
 }
 
 .contact {

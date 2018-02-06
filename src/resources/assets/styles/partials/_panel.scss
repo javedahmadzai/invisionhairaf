@@ -1,0 +1,55 @@
+.panel {
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__heading {
+    flex: 100%;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+  }
+
+  &__left {
+    flex: 25%;
+    height: 100%;
+    border: 1px solid #eee;
+
+    a {
+      display: block;
+      border-bottom: 1px solid #eee;
+      padding: 0.5rem;
+      color: #111;
+      text-decoration: none;
+
+      &:hover {
+        background: #f8f8f8;
+      }
+    }
+  }
+
+  &__right {
+    flex: 75%;
+    height: 100%;
+    background: #f8f8f8;
+    padding: 1rem;
+    min-height: 400px;
+  }
+
+  &__logout {
+    float: right;
+    color: #333;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    background: #efefef;
+    padding: 5px;
+    border: 1px solid transparent;
+
+    &:hover {
+      background: transparent;
+      text-decoration: none;
+      border: 1px solid #eee;
+      color: #eee;
+    }
+  }
+}
