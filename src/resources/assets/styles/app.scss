@@ -9,12 +9,15 @@
 // Global
 @import 'reset';
 @import 'global';
+@import 'layout';
+
+// Partials
+@import 'partials/form';
 
 // Pages
 @import 'pages/contact';
 
 // Components
-@import 'template/layout';
 @import 'template/header';
 @import 'template/footer';
 @import 'template/plate';

@@ -1,0 +1,39 @@
+.form {
+  background: #f9f9f9;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  &__item {
+    margin: 0.5rem 0;
+
+    &__label {
+      margin-right: 1rem;
+    }
+
+    &__input {
+      width: 50%;
+      padding: 0.5rem;
+      border: 1px solid #eee;
+      outline: 0;
+    }
+
+    &__submit {
+      padding: 0.4rem 2.5rem;
+      background: #dadada;
+      border: 2px solid #d6d8db;
+      color: #555;
+      font-weight: bold;
+      cursor: pointer;
+      outline: 0;
+      margin: 0 auto;
+      display: block;
+
+      &:hover {
+        background: #eaeaea;
+        border: 2px solid #eee;
+      }
+    }
+  }
+}

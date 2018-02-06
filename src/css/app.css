@@ -483,6 +483,59 @@ a:hover {
   text-decoration: underline;
 }
 
+.container {
+  width: 90%;
+  max-width: 66rem;
+  margin: 3rem auto;
+}
+
+.form {
+  background: #f9f9f9;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+.form__item {
+  margin: 0.5rem 0;
+}
+
+.form__item__label {
+  margin-right: 1rem;
+}
+
+.form__item__input {
+  width: 50%;
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  outline: 0;
+}
+
+.form__item__submit {
+  padding: 0.4rem 2.5rem;
+  background: #dadada;
+  border: 2px solid #d6d8db;
+  color: #555;
+  font-weight: bold;
+  cursor: pointer;
+  outline: 0;
+  margin: 0 auto;
+  display: block;
+}
+
+.form__item__submit:hover {
+  background: #eaeaea;
+  border: 2px solid #eee;
+}
+
 .contact {
   display: -webkit-box;
   display: -webkit-flex;
@@ -679,12 +732,6 @@ a:hover {
   background: #fff;
   border: 2px solid #262626;
   color: #262626;
-}
-
-.container {
-  width: 90%;
-  max-width: 66rem;
-  margin: 3rem auto;
 }
 
 .header {

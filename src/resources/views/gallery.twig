@@ -1,0 +1,9 @@
+{% extends "layouts/master.twig" %}
+
+{% block content %}
+    <div class="container">
+        {% for index, image in images %}
+            <p>{{image.description}}</p>
+        {% endfor %}
+    </div>
+{% endblock %}
