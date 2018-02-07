@@ -11,7 +11,7 @@ class OldInput extends Middleware
     {
         if (isset($_SESSION['old_input'])) {
             $this->view->getEnvironment()->addGlobal('old', $_SESSION['old_input']);
-            $_SESSION['old_input'] = $request->getParams();
+            unset($_SESSION['old_input']);
         }
 
         return $next($request, $response);

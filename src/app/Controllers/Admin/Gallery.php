@@ -23,7 +23,9 @@ class Gallery extends Controller
         $image = $request->getUploadedFiles()['image'];
 
         if ($image->getError() !== UPLOAD_ERR_OK) {
-            $this->flash->addMessage('admin.gallery-error', 'Error Uploading files, try later');
+            $_SESSION['old_input'] = $request->getParams();
+            print_r($request->getParams());
+            $this->flash->addMessage('admin.gallery-error', 'Error Uploading files, try later!');
 
             return $response->withRedirect($this->router->pathFor('admin.gallery'));
         }

@@ -6,10 +6,9 @@ require __DIR__ . '/../../vendor/autoload.php';
 
 $app = new \Slim\App([
     'settings' => [
-        'displayErrorDetails'    => true,
-        'addContentLengthHeader' => false,
-        'gallery_path'           => __DIR__ . '/../img/gallery/',
-        'db'                     => [
+        'displayErrorDetails' => true,
+        'gallery_path'        => __DIR__ . '/../img/gallery/',
+        'db'                  => [
             'driver'    => 'mysql',
             'host'      => 'localhost',
             'database'  => 'invision',
@@ -35,7 +34,7 @@ $container['db'] = function () use ($capsule) {
 
 $container['view'] = function ($container) {
     $view = new \Slim\Views\Twig(__DIR__ . '/../resources/views', [
-                'cache' =>  false,
+        'cache' => false,
     ]);
 
     $view->addExtension(new \Slim\Views\TwigExtension(
@@ -46,14 +45,37 @@ $container['view'] = function ($container) {
     return $view;
 };
 
-$container['csrf'] = function () {
-    return new \Slim\Csrf\Guard;
-};
-
 $container['flash'] = function () {
     return new \Slim\Flash\Messages;
 };
 
+$container['csrf'] = function () {
+    return new \Slim\Csrf\Guard;
+};
+
 $container['auth'] = function () {
     return new App\Classes\Auth;
+};
+
+$container['notFoundHandler'] = function ($container) {
+    return function ($request, $response) use ($container) {
+        return $container->view->render(
+            $response->withStatus(404)
+                ->withHeader('Content-Type', 'text/html'),
+            'errors/404.twig'
+        );
+    };
+};
+
+$container['notAllowedHandler'] = function ($container) {
+    return function ($request, $response, $methods) use ($container) {
+        return $container->view->render(
+            $response->withStatus(405)
+                ->withHeader('Allow', implode(', ', $methods))
+                ->withHeader('Content-type', 'text/html'),
+            'errors/405.twig', [
+                'data' => implode(', ', $methods),
+            ]
+        );
+    };
 };

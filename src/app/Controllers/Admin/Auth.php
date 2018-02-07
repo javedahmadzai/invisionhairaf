@@ -21,6 +21,7 @@ class Auth extends Controller
         );
 
         if (!$auth) {
+            $_SESSION['old_input'] = $request->getParams();
             $this->flash->addMessage('admin.login-error', 'Invalid Login!');
 
             return $response->withRedirect($this->router->pathFor('admin.login'));
