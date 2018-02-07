@@ -35,7 +35,7 @@ $container['db'] = function () use ($capsule) {
 
 $container['view'] = function ($container) {
     $view = new \Slim\Views\Twig(__DIR__ . '/../resources/views', [
-        'cache' => false,
+                'cache' =>  false,
     ]);
 
     $view->addExtension(new \Slim\Views\TwigExtension(
