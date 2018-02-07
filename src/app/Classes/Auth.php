@@ -2,7 +2,7 @@
 
 namespace App\Classes;
 
-use App\Models\Webmaster;
+use App\Models\Webmaster as Webmaster;
 
 class Auth
 {

@@ -21,7 +21,7 @@
         <div class="form__item">
             <input type="submit" name="submit" value="Insert Image" class="form__item__submit">
         </div>
-        {{ csrf_field() | raw }}
+        {{ csrf_field | raw }}
     </form>
     <div class="list">
     <h1 class="form__heading">Images Uploaded</h1>
@@ -37,7 +37,7 @@
                 <form action="{{ path_for('admin.gallery') }}/{{image.id}}" method="post">
                     <input type="hidden" name="_METHOD" value="DELETE">
                     <button><img src="{{ base_url() }}/img/misc/delete-item.png" alt="Delete Image"></button>
-                    {{ csrf_field() | raw }}
+                    {{ csrf_field | raw }}
                 </form>
             </div>
         </div>

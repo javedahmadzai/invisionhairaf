@@ -512,6 +512,10 @@ a:hover {
   border-radius: 5px;
 }
 
+.form--center {
+  margin: 0 auto;
+}
+
 .form__heading {
   text-align: center;
   margin-bottom: 1.3rem;
@@ -581,7 +585,7 @@ a:hover {
   padding: 0.4rem 2.5rem;
   background: #dadada;
   border: 2px solid #d6d8db;
-  color: #555;
+  color: #444;
   font-weight: bold;
   cursor: pointer;
   outline: 0;

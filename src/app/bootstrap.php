@@ -26,20 +26,11 @@ $container = $app->getContainer();
 
 $capsule = new \Illuminate\Database\Capsule\Manager;
 $capsule->addConnection($container['settings']['db']);
-
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
 
-$container['db'] = function ($container) use ($capsule) {
+$container['db'] = function () use ($capsule) {
     return $capsule;
-};
-
-$container['csrf'] = function () {
-    return new \Slim\Csrf\Guard;
-};
-
-$container['flash'] = function () {
-    return new \Slim\Flash\Messages();
 };
 
 $container['view'] = function ($container) {
@@ -52,13 +43,17 @@ $container['view'] = function ($container) {
         $container->request->getUri()
     ));
 
-    $view->addExtension(new App\Classes\CsrfExtension(
-        $container['csrf']
-    ));
-
     return $view;
 };
 
-$container['auth'] = function ($container) {
+$container['csrf'] = function () {
+    return new \Slim\Csrf\Guard;
+};
+
+$container['flash'] = function () {
+    return new \Slim\Flash\Messages;
+};
+
+$container['auth'] = function () {
     return new App\Classes\Auth;
 };

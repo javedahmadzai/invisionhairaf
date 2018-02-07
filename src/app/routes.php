@@ -1,5 +1,8 @@
 <?php
-$app->add($container['csrf']);
+$app->add(new App\Middlewares\Csrf($container));
+$app->add(new App\Middlewares\TrailingSlash($container));
+$app->add(new App\Middlewares\OldInput($container));
+$app->add($container->csrf);
 
 $app->get('/', '\App\Controllers\Home:index')->setName('home');
 $app->get('/about', '\App\Controllers\About:index')->setName('about');

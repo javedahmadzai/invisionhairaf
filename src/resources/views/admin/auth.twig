@@ -2,14 +2,14 @@
 
 {% block content %}
     <div class="container">
-        <form action="{{ path_for('admin.login') }}" method="post" class="form">
+        <form action="{{ path_for('admin.login') }}" method="post" class="form form--center">
             <h1 class="form__heading">Webmaster</h1>
             {% if error %}
             <p class="form__message form__message--error"><b>Error:</b> {{ error }}</p>
             {% endif %}
             <div class="form__item">
                 <label for="username" class="form__item__label">Username: </label>
-                <input type="text" name="username" placeholder="Type username..." class="form__item__input">
+                <input type="text" name="username" placeholder="Type username..." value="{{old.username}}" class="form__item__input">
             </div>
             <div class="form__item">
                 <label for="password" class="form__item__label">Password: </label>
@@ -18,7 +18,7 @@
             <div class="form__item">
                 <input type="submit" name="submit" value="Login" class="form__item__submit">
             </div>
-            {{ csrf_field() | raw }}
+            {{ csrf_field | raw }}
         </form>
     </div>
 {% endblock %}

@@ -5,12 +5,13 @@ namespace App\Middlewares;
 use Psr\Http\Message\RequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 
-class Guest extends Middleware
+class OldInput extends Middleware
 {
     public function __invoke(Request $request, Response $response, callable $next)
     {
-        if ($this->auth->check()) {
-            return $response->withRedirect($this->router->pathFor('admin.home'));
+        if (isset($_SESSION['old_input'])) {
+            $this->view->getEnvironment()->addGlobal('old', $_SESSION['old_input']);
+            $_SESSION['old_input'] = $request->getParams();
         }
 
         return $next($request, $response);

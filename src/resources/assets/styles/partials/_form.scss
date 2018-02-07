@@ -13,6 +13,10 @@
     border-radius: 5px;
   }
 
+  &--center {
+    margin: 0 auto;
+  }
+
   &__heading {
     text-align: center;
     margin-bottom: 1.3rem;
@@ -81,7 +85,7 @@
       padding: 0.4rem 2.5rem;
       background: #dadada;
       border: 2px solid #d6d8db;
-      color: #555;
+      color: #444;
       font-weight: bold;
       cursor: pointer;
       outline: 0;

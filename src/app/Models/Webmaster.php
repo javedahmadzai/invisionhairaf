@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Webmaster extends Model
 {
-    protected $table = 'Webmaster';
+    protected $table = 'webmaster';
 }

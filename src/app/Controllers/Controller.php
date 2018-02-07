@@ -1,11 +1,13 @@
 <?php
 namespace App\Controllers;
 
+use Psr\Container\ContainerInterface as Container;
+
 class Controller
 {
     protected $container;
 
-    public function __construct($container)
+    public function __construct(Container $container)
     {
         $this->container = $container;
     }
