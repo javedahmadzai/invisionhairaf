@@ -1,7 +1,11 @@
 {% extends "layouts/master.twig" %}
 
 {% block content %}
+{% include "includes/plate.twig" %}
     <div class="container">
-        404 Error
+        <div class="error">
+            <h1 class="error__title">404 Not Found :(</h1>
+            <p class="error__message">The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+        </div>
     </div>
 {% endblock %}

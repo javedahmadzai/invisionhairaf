@@ -28,3 +28,16 @@ CREATE TABLE webmaster (
     UNIQUE (username),
     PRIMARY KEY(id)
 );
+
+CREATE TABLE mail (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    fname VARCHAR(25) NULL,
+    lname VARCHAR(25) NULL,
+    email VARCHAR(64) NOT NULL,
+    phone NUMERIC NULL,
+    subject VARCHAR(255) NULL,
+    message TEXT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(id)
+)

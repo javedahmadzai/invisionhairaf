@@ -74,7 +74,7 @@ $container['notAllowedHandler'] = function ($container) {
                 ->withHeader('Allow', implode(', ', $methods))
                 ->withHeader('Content-type', 'text/html'),
             'errors/405.twig', [
-                'data' => implode(', ', $methods),
+                'methods' => implode(', ', $methods),
             ]
         );
     };

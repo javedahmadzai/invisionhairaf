@@ -6,9 +6,9 @@
     <form action="{{ path_for('admin.gallery') }}" method="post" enctype="multipart/form-data" class="form form--wide">
         <h1 class="form__heading">Upload Images</h1>
         {% if error %}
-        <p class="form__message form__message--error"><b>Error:</b> {{ error }}</p>
+        <p class="form__message form__message--error form__message--fade"><b>Error:</b> {{ error }}</p>
         {% elseif success %}
-        <p class="form__message form__message--success"><b>Success:</b> {{ success }}</p>
+        <p class="form__message form__message--success form__message--fade"><b>Success:</b> {{ success }}</p>
         {% endif %}
         <div class="form__item">
             <label for="images" class="form__item__label">Images: </label>

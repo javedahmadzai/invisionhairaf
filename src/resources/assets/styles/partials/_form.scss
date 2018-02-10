@@ -49,6 +49,14 @@
       background: #d9edf7;
       border: 1px solid #bce8f1;
     }
+
+    &--fade {
+      @include animate(fadeIn, 2s);
+    }
+
+    &--slide {
+      @include animate(slideDownFade, 2s);
+    }
   }
 
   &__item {

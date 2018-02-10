@@ -550,6 +550,20 @@ a:hover {
   border: 1px solid #bce8f1;
 }
 
+.form__message--fade {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+}
+
+.form__message--slide {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: slideDownFade;
+          animation-name: slideDownFade;
+}
+
 .form__item {
   margin: 0.5rem 0;
 }
@@ -731,6 +745,91 @@ a:hover {
 
 .list__item__action button img {
   width: 40px;
+}
+
+.error {
+  margin: 2rem 0 6rem;
+  background: #fbfbfb;
+  padding: 7rem;
+  border-radius: 50% 0 50% 0;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.05);
+}
+
+.error__title {
+  color: #555;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  font-size: 3em;
+}
+
+.error__message {
+  width: 700px;
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #333;
+}
+
+.maillist {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.maillist__item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 0;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #444;
+}
+
+.maillist__item > b {
+  background: #eee;
+  padding: 0.5rem;
+  font-size: 0.9em;
+}
+
+.maillist__item__label {
+  padding: 0.3rem;
+  font-size: 0.9em;
+  border: 1px solid #eee;
+}
+
+.maillist__item__label:nth-child(odd) {
+  background: #eee;
+}
+
+.maillist__item__label b {
+  width: 130px;
+  font-size: 0.9em;
+  display: inline-block;
+}
+
+.maillist__item__message {
+  background: #fcfcfc;
+  padding: 0.5rem;
+  width: 760px;
+  max-height: 200px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  border-bottom: 1px solid #eee;
 }
 
 .contact {

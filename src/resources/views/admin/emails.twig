@@ -1,0 +1,20 @@
+{% extends "layouts/admin.twig" %}
+
+{% block admin_heading %}Emails{% endblock %}
+
+{% block admin_content %}
+    <div class="maillist">
+        {% for index, email in emails %}
+            <div class="maillist__item">
+                <div class="maillist__item__label"><b>First Name: </b>{{email.fname}}</div>
+                <div class="maillist__item__label"><b>Last Name: </b>{{email.lname}}</div>
+                <div class="maillist__item__label"><b>Email Address: </b>{{email.email}}</div>
+                <div class="maillist__item__label"><b>Phone: </b>{{email.phone}}</div>
+                <div class="maillist__item__label"><b>Date: </b>{{email.updated_at}}</div>
+                <div class="maillist__item__label"><b>Subject: </b>{{email.subject}}</div>
+                <b>Message: </b>
+                <div class="maillist__item__message">{{email.message}}</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,12 +1,29 @@
 <div class="mail">
     <h2 class="mail__title">Get in touch</h2>
-    <form action="{{ base_url() }}/contact" method="POST" class="mail__form">
-        <input name="f_name" type="text" class="mail__form__input" placeholder="First Name">
-        <input name="l_name" type="text" class="mail__form__input" placeholder="Last Name">
-        <input name="email" type="text" class="mail__form__input" placeholder="Email">
-        <input name="phone" type="text" class="mail__form__input" placeholder="Phone Number">
-        <input name="subject" type="text" class="mail__form__input mail__form__input--l" placeholder="Subject">
-        <textarea name="message" class="mail__form__textarea" placeholder="Message"></textarea>
-        <input type="submit" class="mail__form__submit" value="Send message">
+    <form action="{{ base_url() }}/contact" method="post" class="mail__form">
+        {% if emailsenderror %}
+        <p class="form__message form__message--error form__message--fade" style="width:100%;">
+            {{ emailsenderror }}
+        </p>
+        {% elseif emailsendsuccess %}
+        <p class="form__message form__message--success form__message--fade" style="width:100%;">
+            {{ emailsendsuccess }}
+        </p>
+        {% elseif validationerrors %}
+        <p class="form__message form__message--error form__message--fade" style="width:100%;">
+            <b>Errors:</b><br>
+            {% for key, error in validationerrors %}
+             {{key+1}} - {{ error }}<br>
+            {% endfor %}
+        </p>
+        {% endif %}
+        <input type="text"name="fname" placeholder="First Name" value="{{ old.fname }}" class="mail__form__input" >
+        <input type="text" name="lname" placeholder="Last Name" value="{{ old.lname }}" class="mail__form__input">
+        <input type="email" name="email" placeholder="Email" value="{{ old.email }}" class="mail__form__input" >
+        <input type="tel" name="phone" placeholder="Phone Number" value="{{ old.phone }}" class="mail__form__input" >
+        <input type="text" name="subject" placeholder="Subject" value="{{ old.subject }}" class="mail__form__input mail__form__input--l" >
+        <textarea name="message" placeholder="Message" class="mail__form__textarea">{{ old.message }}</textarea>
+        <input type="submit" value="Send message" class="mail__form__submit">
+        {{ csrf_field | raw }}
     </form>
 </div>
