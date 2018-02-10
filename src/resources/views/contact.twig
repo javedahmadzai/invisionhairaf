@@ -4,8 +4,60 @@
     {% include "includes/map.twig" %}
     <div class="container">
         <div class="contact">
-            {% include "includes/components/forms/mail.twig" %}
-            {% include "includes/components/forms/subscribe.twig" %}
+            <div class="contact-info">
+                <h2 class="contact-info__title">Contact Info</h2>
+                <div class="contact-info__info">
+                    <h4>Address</h4>
+                    <p>Gul-e-Surkh Intersection</p>
+                    <p>1001 Kabul-Afghanistan</p>
+                    <h4>Phone</h4>
+                    <p>+93 799 311 350</p>
+                    <h4>Email</h4>
+                    <p>info&#64;invisionhairaf.com</p>
+                </div>
+            </div>
+            <div class="mail">
+                <h2 class="mail__title">Get in touch</h2>
+                <form action="{{ base_url() }}/contact" method="post" class="form form--wide">
+                    {% if emailsenderror %}
+                    <p class="form__message form__message--error form__message--fade" style="width:100%;">
+                        {{ emailsenderror }}
+                    </p>
+                    {% elseif emailsendsuccess %}
+                    <p class="form__message form__message--success form__message--fade" style="width:100%;">
+                        {{ emailsendsuccess }}
+                    </p>
+                    {% elseif validationerrors %}
+                    <p class="form__message form__message--error form__message--fade" style="width:100%;">
+                        <b>Errors:</b><br>
+                        {% for key, error in validationerrors %}
+                         {{key+1}} - {{ error }}<br>
+                        {% endfor %}
+                    </p>
+                    {% endif %}
+                    <div class="form__item">
+                        <input type="text" name="fname" placeholder="First Name" value="{{ old.fname }}" class="form__item__input form__item__input--dark">
+                        <input type="text" name="lname" placeholder="Last Name" value="{{ old.lname }}" class="form__item__input form__item__input--dark">
+                    </div>
+                    <div class="form__item">
+                        <input type="email" name="email" placeholder="Email" value="{{ old.email }}" class="form__item__input form__item__input--dark">
+                        <input type="tel" name="phone" placeholder="Phone Number" value="{{ old.phone }}" class="form__item__input form__item__input--dark">
+                    </div>
+                    <div class="form__item">
+                        <input type="text" name="subject" placeholder="Subject" value="{{ old.subject }}" class="form__item__input form__item__input--full form__item__input--dark">
+                    </div>
+
+                    <div class="form__item">
+                        <textarea name="message" placeholder="Message" class="form__item__textarea form__item__textarea--dark form__item__textarea--wide" rows="10">{{ old.message }}</textarea>
+                    </div>
+
+                    <div class="form__item">
+                        <input type="submit" value="Send message" class="form__item__submit--fancy">
+                    </div>
+
+                    {{ csrf_field | raw }}
+                </form>
+            </div>
         </div>
     </div>
 {% endblock %}

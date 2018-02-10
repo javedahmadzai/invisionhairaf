@@ -3,3 +3,9 @@
   max-width: $content-width-wide;
   margin: 3rem auto;
 }
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  margin: 8rem auto;
+}

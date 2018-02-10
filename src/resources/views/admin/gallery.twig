@@ -3,7 +3,7 @@
 {% block admin_heading %}Gallery Management{% endblock %}
 
 {% block admin_content %}
-    <form action="{{ path_for('admin.gallery') }}" method="post" enctype="multipart/form-data" class="form form--wide">
+    <form action="{{ path_for('admin.gallery') }}" method="post" enctype="multipart/form-data" class="form form--wide form--dark">
         <h1 class="form__heading">Upload Images</h1>
         {% if error %}
         <p class="form__message form__message--error form__message--fade"><b>Error:</b> {{ error }}</p>
@@ -11,20 +11,20 @@
         <p class="form__message form__message--success form__message--fade"><b>Success:</b> {{ success }}</p>
         {% endif %}
         <div class="form__item">
-            <label for="images" class="form__item__label">Images: </label>
+            <label for="image" class="form__item__label">Images: </label>
             <input type="file" name="image" accept=".jpg, .jpeg, .png" class="form__item__file">
         </div>
-        <div class="form__item">
+        <div class="form__item form__item--col">
             <label for="description" class="form__item__label">Description: </label>
             <textarea name="description" rows="8" class="form__item__textarea">{{ old.description }}</textarea>
         </div>
         <div class="form__item">
-            <input type="submit" name="submit" value="Insert Image" class="form__item__submit">
+            <input type="submit" name="submit" value="Insert Image" class="form__item__submit form__item__submit--dark">
         </div>
         {{ csrf_field | raw }}
     </form>
     <div class="list">
-    <h1 class="form__heading">Images Uploaded</h1>
+    <h1 class="form__heading" style="margin-top:2rem;">Images Uploaded</h1>
     {% for index, image in images %}
         <div class="list__item">
             <div class="list__item__image">
