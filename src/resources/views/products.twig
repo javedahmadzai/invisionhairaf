@@ -2,6 +2,22 @@
 
 {% block content %}
     <div class="container">
-
+        <h1 style="margin:2rem 0; font-weight:300; text-align:center; font-size:4rem; color:#666;">Products</h1>
+        <div class="products">
+            <div class="products__item">
+                <div class="products__item__image--heading">Image</div>
+                <div class="products__item__title--heading">Title</div>
+                <div class="products__item__price--heading">Price</div>
+                <div class="products__item__description--heading">Description</div>
+            </div>
+            {% for product in products %}
+            <a href="{{path_for('products')}}/{{product.id}}" class="products__item">
+                <div class="products__item__image"><img src="{{ base_url() }}/img/products/{{product.image}}"></div>
+                <div class="products__item__title">{{ product.title }}</div>
+                <div class="products__item__price">{{ product.price }} AFN</div>
+                <div class="products__item__description">{{ product.description }}</div>
+            </a>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

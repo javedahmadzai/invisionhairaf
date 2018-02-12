@@ -2,10 +2,16 @@
 
 namespace App\Controllers;
 
+use App\Models\Products as Product;
+
 class Products extends Controller
 {
     public function index($request, $response)
     {
-        return $this->view->render($response, 'products.twig');
+        $products = Product::all();
+
+        return $this->view->render($response, 'products.twig', [
+            'products' => $products,
+        ]);
     }
 }

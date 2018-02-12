@@ -1,0 +1,41 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 650px;
+
+    @include animate(fadeIn, 2s);
+
+    &__date {
+      background: #860f14;
+      color: #fff;
+      padding: 0.3rem;
+      text-size: 0.9em;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    &__image {
+      img {
+        width: 650px;
+
+        @include animate(bounce, 2s);
+      }
+    }
+
+    &__description {
+      background: #f6f6f6;
+      padding: 1.5rem;
+      line-height: 2em;
+      margin: 0 auto 3rem;
+      width: 650px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+      @include animate(pulse, 2s);
+    }
+  }
+}

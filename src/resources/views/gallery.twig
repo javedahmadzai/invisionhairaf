@@ -1,9 +1,16 @@
 {% extends "layouts/master.twig" %}
 
 {% block content %}
+{% include "includes/plate.twig" %}
     <div class="container">
-        {% for index, image in images %}
-            <img src="{{ base_url() }}/img/gallery/{{image.url}}" width="200" height="200">
+        <div class="gallery">
+        {% for image in images %}
+            <div class="gallery__item">
+                <div class="gallery__item__date">{{ image.created_at }}</div>
+                <div class="gallery__item__image"><img src="{{ base_url() }}/img/gallery/{{image.url}}"></div>
+                <div class="gallery__item__description">{{ image.description }}</div>
+            </div>
         {% endfor %}
+        </div>
     </div>
 {% endblock %}
