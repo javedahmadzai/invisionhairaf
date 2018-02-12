@@ -12,7 +12,6 @@ CREATE TABLE gallery (
 CREATE TABLE products (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     title VARCHAR(255) NOT NULL,
-    slug VARCHAR(255) NOT NULL,
     description TEXT,
     price NUMERIC,
     image VARCHAR(255) NOT NULL,

@@ -19,30 +19,33 @@
             <div class="mail">
                 <h2 class="mail__title">Get in touch</h2>
                 <form action="{{ base_url() }}/contact" method="post" class="form form--wide">
-                    {% if emailsenderror %}
+                    {% if error %}
                     <p class="form__message form__message--error form__message--fade" style="width:100%;">
-                        {{ emailsenderror }}
+                        {{ error }}
                     </p>
-                    {% elseif emailsendsuccess %}
+                    {% elseif success %}
                     <p class="form__message form__message--success form__message--fade" style="width:100%;">
-                        {{ emailsendsuccess }}
+                        {{ success }}
                     </p>
-                    {% elseif validationerrors %}
+                    {% elseif validation %}
                     <p class="form__message form__message--error form__message--fade" style="width:100%;">
                         <b>Errors:</b><br>
-                        {% for key, error in validationerrors %}
+                        {% for key, error in validation %}
                          {{key+1}} - {{ error }}<br>
                         {% endfor %}
                     </p>
                     {% endif %}
+
                     <div class="form__item">
                         <input type="text" name="fname" placeholder="First Name" value="{{ old.fname }}" class="form__item__input form__item__input--dark">
                         <input type="text" name="lname" placeholder="Last Name" value="{{ old.lname }}" class="form__item__input form__item__input--dark">
                     </div>
+
                     <div class="form__item">
                         <input type="email" name="email" placeholder="Email" value="{{ old.email }}" class="form__item__input form__item__input--dark">
                         <input type="tel" name="phone" placeholder="Phone Number" value="{{ old.phone }}" class="form__item__input form__item__input--dark">
                     </div>
+
                     <div class="form__item">
                         <input type="text" name="subject" placeholder="Subject" value="{{ old.subject }}" class="form__item__input form__item__input--full form__item__input--dark">
                     </div>

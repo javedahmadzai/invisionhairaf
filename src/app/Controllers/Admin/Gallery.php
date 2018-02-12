@@ -24,7 +24,6 @@ class Gallery extends Controller
 
         if ($image->getError() !== UPLOAD_ERR_OK) {
             $_SESSION['old_input'] = $request->getParams();
-            print_r($request->getParams());
             $this->flash->addMessage('admin.gallery-error', 'Error Uploading files, try later!');
 
             return $response->withRedirect($this->router->pathFor('admin.gallery'));
@@ -51,8 +50,8 @@ class Gallery extends Controller
     public function deleteImage($request, $response, $args = null)
     {
         $image = Image::find($args['id']);
-        unlink($this->settings['gallery_path'] . DIRECTORY_SEPARATOR . $image->url);
         $image->delete();
+        unlink($this->settings['gallery_path'] . DIRECTORY_SEPARATOR . $image->url);
 
         return $response->withRedirect($this->router->pathFor('admin.gallery'));
     }

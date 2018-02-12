@@ -21,8 +21,14 @@ $app->group('/admin', function () {
 $app->group('/admin', function () {
     $this->get('', '\App\Controllers\Admin\Home:index')->setName('admin.home');
     $this->get('/logout', '\App\Controllers\Admin\Auth:logout')->setName('admin.logout');
+    //-- gallery
     $this->get('/gallery', '\App\Controllers\Admin\Gallery:index')->setName('admin.gallery');
     $this->post('/gallery', '\App\Controllers\Admin\Gallery:uploadImages');
     $this->delete('/gallery/{id}', '\App\Controllers\Admin\Gallery:deleteImage');
+    //-- emails
     $this->get('/emails', '\App\Controllers\Admin\Emails:index')->setName('admin.emails');
+    //-- products
+    $this->get('/products', '\App\Controllers\Admin\Products:index')->setName('admin.products');
+    $this->post('/products', '\App\Controllers\Admin\Products:addProduct');
+    $this->delete('/products/{id}', '\App\Controllers\Admin\Products:deleteProduct');
 })->add(new App\Middlewares\Admin($container));

@@ -68,6 +68,11 @@
 
     &--col {
       flex-direction: column;
+      align-items: left;
+
+      .form__item__label {
+        width: 100%;
+      }
     }
 
     &__label {
@@ -89,14 +94,23 @@
     }
 
     &__input {
-      flex-basis: 48%;
+      flex-basis: 100%;
       padding: 0.5rem;
       height: 40px;
       border: 1px solid #eee;
       outline: none;
+      background: #fff;
+
+      @media #{$medium} {
+        flex-basis: 49%;
+      }
 
       &--full {
         flex-basis: 100%;
+      }
+
+      &--file {
+        color: #333;
       }
 
       &--dark {
@@ -124,6 +138,7 @@
       font-family: arial;
       padding: 0.5rem;
       color: #666;
+      margin-top: 1rem;
 
       &--wide {
         max-width: 100%;
@@ -142,10 +157,6 @@
           border: 1px solid #262626;
         }
       }
-    }
-
-    &__file {
-      display: inline-block;
     }
 
     &__submit {
@@ -175,7 +186,7 @@
       }
 
       &--fancy {
-        margin: 2rem auto;
+        margin: 1rem auto;
         padding: 0.8rem 2rem;
         border: 0;
         border-radius: 50px;

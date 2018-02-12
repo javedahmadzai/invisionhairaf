@@ -1,43 +1,43 @@
 .list {
   display: flex;
   flex-direction: column;
+  border: 1px solid #eee;
+  margin-bottom: 2rem;
 
   &__item {
     display: flex;
-    padding: 2rem 0;
-    border-top: 2px solid #eee;
+    padding: 0.5rem;
     justify-content: space-between;
+    align-items: center;
 
     &:nth-child(odd) {
-      background: #f1f1f1;
+      border-bottom: 1px solid #eee;
+      background: #f3f3f3;
     }
 
-    &__image {
-      flex-basis: 28%;
-
-      img {
-        width: 200px;
-        height: 200px;
-      }
+    &--heading {
+      font-weight: bold;
+      background: #333 !important;
+      color: #ccc !important;
     }
 
-    &__description {
-      flex-basis: 66%;
-      font-size: 0.9rem;
-      color: #333;
-    }
+    &__cell {
+      padding: 0 1rem 0 0.5rem;
+      flex: 3;
+      font-size: 0.9em;
 
-    &__action {
-      flex-basis: 8%;
-      padding-left: 1rem;
+      &--action {
+        flex: 1;
+        text-align: center;
 
-      button {
-        border: 0;
-        background: none;
-        cursor: pointer;
+        button {
+          border: 0;
+          background: none;
+          cursor: pointer;
 
-        img {
-          width: 40px;
+          img {
+            width: 30px;
+          }
         }
       }
     }

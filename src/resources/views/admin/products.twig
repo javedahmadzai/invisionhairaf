@@ -1,0 +1,75 @@
+{% extends "layouts/admin.twig" %}
+
+{% block admin_heading %}Products{% endblock %}
+
+{% block admin_content %}
+    <form action="{{ path_for('admin.products') }}" method="post" enctype="multipart/form-data" class="form form--wide form--dark">
+        <h1 class="form__heading">Add Products</h1>
+        {% if error %}
+        <p class="form__message form__message--error form__message--fade"><b>Error:</b> {{ error }}</p>
+        {% elseif success %}
+        <p class="form__message form__message--success form__message--fade"><b>Success:</b> {{ success }}</p>
+        {% elseif validation %}
+        <p class="form__message form__message--error form__message--fade" style="width:100%;">
+            <b>Errors:</b><br>
+            {% for key, error in validation %}
+             {{key+1}} - {{ error }}<br>
+            {% endfor %}
+        </p>
+        {% endif %}
+
+        <div class="form__item">
+            <label for="title" class="form__item__label form__item__label--frame">Product Title: </label>
+            <input type="text" name="title" placeholder="Product title..." value="{{ old.title }}" class="form__item__input form__item__input--full">
+        </div>
+
+        <div class="form__item">
+            <label for="price" class="form__item__label form__item__label--frame">Product Price: </label>
+            <input type="number" name="price" placeholder="Product price..." value="{{ old.price }}" class="form__item__input form__item__input--full">
+        </div>
+
+        <div class="form__item">
+            <label for="image" class="form__item__label form__item__label--frame">Product Image: </label>
+            <input type="file" name="image" class="form__item__input form__item__input--full form__item__input--file">
+        </div>
+
+        <div class="form__item form__item--col">
+            <label for="description" class="form__item__label form__item__label--frame">Product Description: </label>
+            <textarea name="description" rows="8" class="form__item__textarea">{{ old.description }}</textarea>
+        </div>
+
+        <div class="form__item">
+            <input type="submit" value="Login" class="form__item__submit">
+        </div>
+
+        {{ csrf_field | raw }}
+    </form>
+    <h1 class="form__heading" style="margin-top:2rem;">Products</h1>
+    {% if deleteerror %}
+    <p class="form__message form__message--error form__message--fade"><b>Error:</b> {{ deleteerror }}</p>
+    {% elseif deletesuccess %}
+    <p class="form__message form__message--success form__message--fade"><b>Success:</b> {{ deletesuccess }}</p>
+    {% endif %}
+    <div class="list">
+        <div class="list__item list__item--heading">
+            <div class="list__item__cell">Title</div>
+            <div class="list__item__cell">Price</div>
+            <div class="list__item__cell">Date</div>
+            <div class="list__item__cell list__item__cell--action">Action</div>
+        </div>
+        {% for product in products %}
+        <div class="list__item">
+            <div class="list__item__cell">{{product.title}}</div>
+            <div class="list__item__cell">{{product.price}}</div>
+            <div class="list__item__cell">{{product.created_at}}</div>
+            <div class="list__item__cell list__item__cell--action">
+                <form action="{{ path_for('admin.products') }}/{{product.id}}" method="post">
+                    <input type="hidden" name="_METHOD" value="DELETE">
+                    <button><img src="{{ base_url() }}/img/misc/delete-item.png" alt="Delete Image"></button>
+                    {{ csrf_field | raw }}
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

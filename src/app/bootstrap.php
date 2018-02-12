@@ -8,6 +8,7 @@ $app = new \Slim\App([
     'settings' => [
         'displayErrorDetails' => true,
         'gallery_path'        => __DIR__ . '/../img/gallery/',
+        'products_path'       => __DIR__ . '/../img/products/',
         'db'                  => [
             'driver'    => 'mysql',
             'host'      => 'localhost',

@@ -13,9 +13,9 @@ class Contact extends Controller
     public function index($request, $response)
     {
         return $this->view->render($response, 'contact.twig', [
-            'validationerrors' => $this->flash->getFirstMessage('contact.validation-errors'),
-            'emailsenderror'   => $this->flash->getFirstMessage('contact.emailsend-error'),
-            'emailsendsuccess' => $this->flash->getFirstMessage('contact.emailsend-success'),
+            'validation' => $this->flash->getFirstMessage('contact-validation'),
+            'error'      => $this->flash->getFirstMessage('contact-error'),
+            'success'    => $this->flash->getFirstMessage('contact-success'),
         ]);
     }
 
@@ -42,7 +42,7 @@ class Contact extends Controller
             ]);
 
             $_SESSION['old_input'] = $request->getParams();
-            $this->flash->addMessage('contact.validation-errors', array_values(array_filter($errors)));
+            $this->flash->addMessage('contact-validation', array_values(array_filter($errors)));
 
             return $response->withRedirect($this->router->pathFor('contact'));
         }
@@ -59,7 +59,7 @@ class Contact extends Controller
             $sendMail->send();
         } catch (Exception $e) {
             $_SESSION['old_input'] = $request->getParams();
-            $this->flash->addMessage('contact.emailsend-error', $e->getMessage());
+            $this->flash->addMessage('contact-error', $e->getMessage());
 
             return $response->withRedirect($this->router->pathFor('contact'));
         }
@@ -73,7 +73,7 @@ class Contact extends Controller
         $saveMail->message = $request->getParam('message');
         $saveMail->save();
 
-        $this->flash->addMessage('contact.emailsend-success', 'Successfully send your mail!');
+        $this->flash->addMessage('contact-success', 'Successfully send your mail!');
 
         return $response->withRedirect($this->router->pathFor('contact'));
     }
