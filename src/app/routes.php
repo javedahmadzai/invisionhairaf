@@ -4,8 +4,8 @@ $app->add(new App\Middlewares\OldInput($container));
 $app->add(new App\Middlewares\Csrf($container));
 $app->add($container['csrf']);
 
-$app->get('/', '\App\Controllers\Home:index')->setName('home');
-$app->get('/about', '\App\Controllers\About:index')->setName('about');
+$app->get('/', '\App\Controllers\Home:index')->setName('home')->add(new App\Middlewares\Slider($container));
+$app->get('/about', '\App\Controllers\About:index')->setName('about')->add(new App\Middlewares\Slider($container));
 $app->get('/contact', '\App\Controllers\Contact:index')->setName('contact');
 $app->post('/contact', '\App\Controllers\Contact:mail');
 $app->get('/services', '\App\Controllers\Services:index')->setName('services');
@@ -31,4 +31,8 @@ $app->group('/admin', function () {
     $this->get('/products', '\App\Controllers\Admin\Products:index')->setName('admin.products');
     $this->post('/products', '\App\Controllers\Admin\Products:addProduct');
     $this->delete('/products/{id}', '\App\Controllers\Admin\Products:deleteProduct');
+    //-- slider
+    $this->get('/slider', '\App\Controllers\Admin\Slider:index')->setName('admin.slider');
+    $this->post('/slider', '\App\Controllers\Admin\Slider:addSlide');
+    $this->delete('/slider/{id}', '\App\Controllers\Admin\Slider:deleteSlide');
 })->add(new App\Middlewares\Admin($container));

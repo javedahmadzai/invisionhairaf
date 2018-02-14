@@ -11,6 +11,7 @@ $settings['settings'] = [
     'twigCache'              => false,
     'gallery_path'           => __DIR__ . '/../img/gallerya/',
     'products_path'          => __DIR__ . '/../img/products/',
+    'slider_path'            => __DIR__ . '/../img/slider/',
     'db'                     => [
         'driver'    => 'mysql',
         'host'      => 'localhost',

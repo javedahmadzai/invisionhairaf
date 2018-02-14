@@ -1254,7 +1254,7 @@ a:hover {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  text-align: center;
+  text-align: left;
   background: #860f14;
   color: #fff;
   padding: 0.5rem;
@@ -1266,9 +1266,9 @@ a:hover {
       -ms-flex: 5;
           flex: 5;
   padding: 1rem;
-  background: #efefef;
+  background: #f7f7f7;
   color: #333;
-  border: 1px solid #ddd;
+  border: 1px solid #ededed;
 }
 
 .products__item__description--heading {

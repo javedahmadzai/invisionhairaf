@@ -1,10 +1,10 @@
 {% extends "layouts/admin.twig" %}
 
-{% block admin_heading %}Gallery Management{% endblock %}
+{% block admin_heading %}Slider Images{% endblock %}
 
 {% block admin_content %}
-    <form action="{{ path_for('admin.gallery') }}" method="post" enctype="multipart/form-data" class="form form--wide form--dark">
-        <h1 class="form__heading">Upload Images</h1>
+    <form action="{{ path_for('admin.slider') }}" method="post" enctype="multipart/form-data" class="form form--wide form--dark">
+        <h1 class="form__heading">Upload Slides</h1>
         {% if error %}
         <p class="form__message form__message--error form__message--fade"><b>Error:</b> {{ error }}</p>
         {% elseif success %}
@@ -12,12 +12,17 @@
         {% endif %}
 
         <div class="form__item">
-            <label for="image" class="form__item__label form__item__label--frame">Image: </label>
+            <label for="title" class="form__item__label form__item__label--frame">Slide Title: </label>
+            <input type="text" name="title" placeholder="Product title..." value="{{ old.title }}" class="form__item__input form__item__input--full">
+        </div>
+
+        <div class="form__item">
+            <label for="image" class="form__item__label form__item__label--frame">Slide Image: </label>
             <input type="file" name="image" accept=".jpg, .jpeg, .png" class="form__item__input form__item__input--full form__item__input--file">
         </div>
 
         <div class="form__item form__item--col">
-            <label for="description" class="form__item__label form__item__label--frame">Product Description: </label>
+            <label for="description" class="form__item__label form__item__label--frame">Slide Description: </label>
             <textarea name="description" rows="8" class="form__item__textarea">{{ old.description }}</textarea>
         </div>
 
@@ -27,23 +32,23 @@
 
         {{ csrf_field | raw }}
     </form>
-    <h1 class="form__heading" style="margin-top:2rem;">Images Uploaded</h1>
+    <h1 class="form__heading" style="margin-top:2rem;">Slides Uploaded</h1>
     <div class="list">
         <div class="list__item list__item--heading">
             <div class="list__item__cell">Image</div>
-            <div class="list__item__cell">Date</div>
+            <div class="list__item__cell">Title</div>
             <div class="list__item__cell list__item__cell--action">Action</div>
         </div>
-        {% for image in images %}
+        {% for slide in slides %}
         <div class="list__item">
             <div class="list__item__cell">
-                <img src="{{ base_url() }}/img/gallery/{{image.url}}" width="200" height="200">
+                <img src="{{ base_url() }}/img/slider/{{slide.image}}">
             </div>
             <div class="list__item__cell">
-                <p>{{ image.created_at }}</p>
+                <p>{{ slide.title }}</p>
             </div>
             <div class="list__item__cell list__item__cell--action">
-                <form action="{{ path_for('admin.gallery') }}/{{image.id}}" method="post">
+                <form action="{{ path_for('admin.slider') }}/{{slide.id}}" method="post">
                     <input type="hidden" name="_METHOD" value="DELETE">
                     <button><img src="{{ base_url() }}/img/misc/delete-item.png" alt="Delete Image"></button>
                     {{ csrf_field | raw }}

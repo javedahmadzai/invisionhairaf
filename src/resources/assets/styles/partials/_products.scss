@@ -71,7 +71,7 @@
 
       &--heading {
         flex: 1;
-        text-align: center;
+        text-align: left;
         background: #860f14;
         color: #fff;
         padding: 0.5rem;
@@ -81,9 +81,9 @@
     &__description {
       flex: 5;
       padding: 1rem;
-      background: #efefef;
+      background: #f7f7f7;
       color: #333;
-      border: 1px solid #ddd;
+      border: 1px solid #ededed;
 
       &--heading {
         flex: 5;
