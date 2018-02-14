@@ -1,0 +1,18 @@
+{% extends "layouts/master.twig" %}
+
+{% block content %}
+    <div class="container">
+        <h1 style="margin:2rem 0; font-weight:300; text-align:center; font-size:3rem; color:#4d4d4d;">Buy Now</h1>
+        {% if error %}
+        <p class="form__message form__message--fade"><b>Error:</b> {{ error }}</p>
+        {% endif %}
+        {% if product %}
+        <div class="product">
+            <div class="product__title">{{ product.title }}</div>
+            <div class="product__image"><img src="{{ base_url() }}/img/products/{{product.image}}"></div>
+            <div class="product__price">{{ product.price }} AFN</div>
+            <div class="product__description">{{ product.description }}</div>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

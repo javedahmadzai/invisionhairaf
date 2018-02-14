@@ -10,6 +10,7 @@ $app->get('/contact', '\App\Controllers\Contact:index')->setName('contact');
 $app->post('/contact', '\App\Controllers\Contact:mail');
 $app->get('/services', '\App\Controllers\Services:index')->setName('services');
 $app->get('/products', '\App\Controllers\Products:index')->setName('products');
+$app->get('/products/{id}', '\App\Controllers\Products:getProduct')->setName('product');
 $app->get('/gallery', '\App\Controllers\Gallery:index')->setName('gallery');
 
 // Admin

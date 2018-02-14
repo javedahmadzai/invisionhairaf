@@ -14,4 +14,19 @@ class Products extends Controller
             'products' => $products,
         ]);
     }
+
+    public function getProduct($request, $response, $args)
+    {
+        $product = Product::find($args['id']);
+
+        if (!$product) {
+            return $this->view->render($response, 'product.twig', [
+                'error' => 'This product does not exists!',
+            ]);
+        }
+
+        return $this->view->render($response, 'product.twig', [
+            'product' => $product,
+        ]);
+    }
 }

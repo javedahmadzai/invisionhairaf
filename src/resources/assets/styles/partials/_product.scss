@@ -1,0 +1,39 @@
+.product {
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    margin: 0.25rem 0;
+
+    img {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  &__title {
+    margin: 0.25rem 0;
+    padding: 1rem;
+    background: #860f14;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    margin: 0.25rem 0;
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    font-weight: 300;
+    font-size: 2rem;
+  }
+
+  &__description {
+    margin: 0.25rem 0;
+    padding: 1rem;
+    background: #efefef;
+    line-height: 2rem;
+  }
+}
