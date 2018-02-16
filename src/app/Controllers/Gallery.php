@@ -10,7 +10,7 @@ class Gallery extends Controller
     {
         $images = $this->db->table('gallery')->get();
 
-        return $this->view->render($response, 'gallery.twig', [
+        return $this->view->render($response, 'pages/gallery.twig', [
             'images' => $images,
         ]);
     }

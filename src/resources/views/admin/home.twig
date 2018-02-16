@@ -3,10 +3,14 @@
 {% block admin_heading %}Home{% endblock %}
 
 {% block admin_content %}
-    <center><h1>Welcome to Admin Home</h1></center><br><hr>
-    <a href="{{ base_url() }}/admin">Home</a><hr>
-    <a href="{{ base_url() }}/admin/gallery">Gallery</a><hr>
-    <a href="{{ base_url() }}/admin/emails">Emails</a><hr>
-    <a href="{{ base_url() }}/admin/products">Products</a><hr>
-    <a href="{{ base_url() }}/admin/slider">Slider</a><hr>
+    <div class="cpanel">
+        <p style="text-align:center;"><i class="fab fa-cpanel fa-10x"></i></p>
+        <ul>
+            <li><i class="fas fa-home"></i> <a href="{{ base_url() }}/admin">Home</a></li>
+            <li><i class="fas fa-image"></i> <a href="{{ base_url() }}/admin/gallery">Gallery</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="{{ base_url() }}/admin/emails">Emails</a></li>
+            <li><i class="fas fa-fire"></i> <a href="{{ base_url() }}/admin/products">Products</a></li>
+            <li><i class="fas fa-film"></i> <a href="{{ base_url() }}/admin/slider">Slider</a></li>
+        </ul>
+    </div>
 {% endblock %}

@@ -2,8 +2,8 @@
 
 {% block content %}
     <div class="container">
-        <form action="{{ path_for('admin.login') }}" method="post" class="form form--center" style="background: #f9f9f9;border:1px solid #eee;">
-            <h1 class="form__heading">Webmaster</h1>
+        <p style="text-align:center;color:#333;"><i class="fab fa-cpanel fa-10x"></i></p>
+        <form action="{{ path_for('admin.login') }}" method="post" class="form form--center form--dark" style="border-radius:10px;margin-bottom:6rem;">
             {% if error %}
             <p class="form__message form__message--error form__message--fade"><b>Error:</b> {{ error }}</p>
             {% endif %}
@@ -16,7 +16,7 @@
                 <input type="password" name="password" placeholder="Type password..." class="form__item__input form__item__input--full">
             </div>
             <div class="form__item">
-                <input type="submit" name="submit" value="Login" class="form__item__submit">
+                <input type="submit" value="Login" class="form__item__submit--fancy">
             </div>
             {{ csrf_field | raw }}
         </form>

@@ -12,7 +12,7 @@ class Contact extends Controller
 {
     public function index($request, $response)
     {
-        return $this->view->render($response, 'contact.twig', [
+        return $this->view->render($response, 'pages/contact.twig', [
             'validation' => $this->flash->getFirstMessage('contact-validation'),
             'error'      => $this->flash->getFirstMessage('contact-error'),
             'success'    => $this->flash->getFirstMessage('contact-success'),

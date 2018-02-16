@@ -10,7 +10,7 @@ class Products extends Controller
     {
         $products = Product::all();
 
-        return $this->view->render($response, 'products.twig', [
+        return $this->view->render($response, 'pages/products.twig', [
             'products' => $products,
         ]);
     }
@@ -20,12 +20,12 @@ class Products extends Controller
         $product = Product::find($args['id']);
 
         if (!$product) {
-            return $this->view->render($response, 'product.twig', [
+            return $this->view->render($response, 'pages/product.twig', [
                 'error' => 'This product does not exists!',
             ]);
         }
 
-        return $this->view->render($response, 'product.twig', [
+        return $this->view->render($response, 'pages/product.twig', [
             'product' => $product,
         ]);
     }

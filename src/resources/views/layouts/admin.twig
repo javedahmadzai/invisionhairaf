@@ -5,14 +5,14 @@
        <div class="panel">
             <div class="panel__heading">
                 Webmaster Area - {% block admin_heading %}{% endblock %}
-                <a href="{{ base_url() }}/admin/logout" class="panel__logout">Logout</a>
+                <a href="{{ base_url() }}/admin/logout" class="panel__logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
             <div class="panel__left">
-                <a href="{{ base_url() }}/admin">Home</a>
-                <a href="{{ base_url() }}/admin/gallery">Gallery</a>
-                <a href="{{ base_url() }}/admin/emails">Emails</a>
-                <a href="{{ base_url() }}/admin/products">Products</a>
-                <a href="{{ base_url() }}/admin/slider">Slider</a>
+                <a href="{{ base_url() }}/admin"><i class="fas fa-home"></i> Home</a>
+                <a href="{{ base_url() }}/admin/gallery"><i class="fas fa-image"></i> Gallery</a>
+                <a href="{{ base_url() }}/admin/emails"><i class="fas fa-envelope"></i> Emails</a>
+                <a href="{{ base_url() }}/admin/products"><i class="fas fa-fire"></i> Products</a>
+                <a href="{{ base_url() }}/admin/slider"><i class="fas fa-film"></i> Slider</a>
             </div>
             <div class="panel__right">
                 {% block admin_content %}{% endblock %}

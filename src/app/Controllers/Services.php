@@ -6,6 +6,6 @@ class Services extends Controller
 {
     public function index($request, $response)
     {
-        return $this->view->render($response, 'services.twig');
+        return $this->view->render($response, 'pages/services.twig');
     }
 }
