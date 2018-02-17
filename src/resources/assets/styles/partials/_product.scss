@@ -1,39 +1,88 @@
 .product {
   display: flex;
-  flex-direction: column;
+  margin: 5rem 0;
 
-  &__image {
-    margin: 0.25rem 0;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 
-    img {
-      width: 400px;
-      height: 400px;
+    &__image {
+      height: 500px;
+      margin-right: 1rem;
+
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-height: 500px;
+      }
     }
-  }
 
-  &__title {
-    margin: 0.25rem 0;
-    padding: 1rem;
-    background: #860f14;
-    color: #fff;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
+    &__title {
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      border-radius: 3px;
+      color: #101010;
+      font-size: 1.6em;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
 
-  &__price {
-    margin: 0.25rem 0;
-    background: #333;
-    color: #fff;
-    padding: 1rem;
-    font-weight: 300;
-    font-size: 2rem;
-  }
+    &__price {
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      color: #777;
+      font-weight: 300;
+      font-size: 2rem;
+    }
 
-  &__description {
-    margin: 0.25rem 0;
-    padding: 1rem;
-    background: #efefef;
-    line-height: 2rem;
+    &__description {
+      padding-left: 1rem;
+      line-height: 2rem;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    &__group {
+      padding-left: 1rem;
+      margin: 1rem 0;
+      display: flex;
+
+      label {
+        background: #dfdfdf;
+        color: #333;
+        padding: 0.5rem 2rem;
+        font-size: 1em;
+        font-weight: 500;
+      }
+
+      input {
+        outline: none;
+      }
+
+      button {
+        background: #111;
+        color: #fff;
+        border: none;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        font-size: 1em;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          i {
+            color: red;
+          }
+        }
+
+        i {
+          padding-left: 1rem;
+          font-size: 1.5rem;
+        }
+      }
+    }
   }
 }

@@ -17,7 +17,8 @@ class Products extends Controller
 
     public function getProduct($request, $response, $args)
     {
-        $product = Product::find($args['id']);
+        $product         = Product::find($args['id']);
+        $relatedProducts = Product::orderBy('id', 'desc')->take(4)->get();
 
         if (!$product) {
             return $this->view->render($response, 'pages/product.twig', [
@@ -26,7 +27,8 @@ class Products extends Controller
         }
 
         return $this->view->render($response, 'pages/product.twig', [
-            'product' => $product,
+            'product'         => $product,
+            'relatedProducts' => $relatedProducts,
         ]);
     }
 }

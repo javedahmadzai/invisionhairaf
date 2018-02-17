@@ -98,7 +98,7 @@
 
   &__dropdown {
     height: 0;
-    max-height: 300px;
+    max-height: 200px;
     background: $color1;
     overflow-y: scroll;
 
@@ -108,7 +108,7 @@
       right: 0;
       left: 0;
       display: none;
-      min-height: 180px;
+      min-height: 100px;
       overflow-y: hidden;
     }
 

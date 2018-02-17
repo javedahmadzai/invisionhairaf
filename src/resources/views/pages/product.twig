@@ -2,17 +2,43 @@
 
 {% block content %}
     <div class="container">
-        <h1 style="margin:2rem 0; font-weight:300; text-align:center; font-size:3rem; color:#4d4d4d;">Buy Now</h1>
         {% if error %}
         <p class="form__message form__message--fade"><b>Error:</b> {{ error }}</p>
         {% endif %}
         {% if product %}
         <div class="product">
-            <div class="product__title">{{ product.title }}</div>
-            <div class="product__image"><img src="{{ base_url() }}/img/products/{{product.image}}"></div>
-            <div class="product__price">{{ product.price }} AFN</div>
-            <div class="product__description">{{ product.description }}</div>
+            <div class="product__item">
+                <div class="product__item__image"><img src="{{ base_url() }}/img/products/{{product.image}}"></div>
+            </div>
+            <div class="product__item">
+                <div class="product__item__title">{{ product.title }}</div>
+                <div class="product__item__price"><b>Rs</b> {{ product.price }}</div>
+                <div class="product__item__description">{{ product.description }}</div>
+                <div class="product__item__group">
+                    <label for="spinner">Quantity</label>
+                    <input type="text" name="quantity" id="spinner">
+                </div>
+                <div class="product__item__group">
+                    <button>ADD TO CART<i class="fas fa-cart-plus"></i></button>
+                </div>
+            </div>
         </div>
         {% endif %}
+        <h1 class="related-products__title">Related Products</h1>
+        <div class="related-products">
+            {% for relatedProduct in relatedProducts %}
+            <div class="related-products__item">
+                <div class="related-products__item__image">
+                    <img src="{{ base_url() }}/img/products/{{relatedProduct.image}}">
+                </div>
+                <div class="related-products__item__title">
+                    {{relatedProduct.title}}
+                </div>
+                <div class="related-products__item__price">
+                    <b>Rs</b>{{relatedProduct.price}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
