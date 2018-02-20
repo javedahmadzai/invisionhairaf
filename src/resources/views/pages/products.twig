@@ -1,6 +1,12 @@
 {% extends "layouts/master.twig" %}
 
 {% block content %}
+    {% if cart %}
+        <div style="padding:1rem; background:#000; text-align:center; color:#fff;">
+            {{ cart }}
+            <a href="{{ path_for('cart') }}" style="color:#333;background:#fff;padding:0.5rem; margin-left:50px;font-size:0.8rem; text-decoration:none;">VIEW CART</a>
+        </div>
+    {% endif %}
     <div class="container">
         <h1 style="margin:2rem 0; font-weight:300; text-align:center; font-size:3rem; color:#4d4d4d;">Our Products</h1>
         <div class="products">

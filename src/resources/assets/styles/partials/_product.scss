@@ -45,42 +45,45 @@
     }
 
     &__group {
-      padding-left: 1rem;
-      margin: 1rem 0;
       display: flex;
+      padding-left: 1rem;
+      margin: 3rem 0;
 
-      label {
-        background: #dfdfdf;
-        color: #333;
-        padding: 0.5rem 2rem;
-        font-size: 1em;
-        font-weight: 500;
-      }
-
-      input {
+      .spinner {
         outline: none;
+        width: 40px;
+        height: 36px;
+        text-align: center;
       }
 
       button {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
         background: #111;
         color: #fff;
         border: none;
-        padding: 1rem 2rem;
-        display: flex;
-        align-items: center;
-        font-size: 1em;
-        font-weight: 600;
+        outline: none;
         cursor: pointer;
 
         &:hover {
           i {
-            color: red;
+            background-color: #0cc3ce;
           }
         }
 
+        span {
+          padding: 0.8rem 2rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1.2px;
+        }
+
         i {
-          padding-left: 1rem;
-          font-size: 1.5rem;
+          padding: 0.8rem 1.3rem;
+          border-left: 1px solid #666;
+          font-size: 1.3rem;
+          transition: background-color .4s ease-out,color .2s ease-out;
         }
       }
     }

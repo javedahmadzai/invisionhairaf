@@ -1,17 +1,20 @@
 <?php
-$app->add(new App\Middlewares\TrailingSlash($container));
+$app->add(new App\Middlewares\TrailingSlash());
 $app->add(new App\Middlewares\OldInput($container));
 $app->add(new App\Middlewares\Csrf($container));
-$app->add($container['csrf']);
+$app->add($container->get('csrf'));
 
 $app->get('/', '\App\Controllers\Home:index')->setName('home')->add(new App\Middlewares\Slider($container));
 $app->get('/about', '\App\Controllers\About:index')->setName('about')->add(new App\Middlewares\Slider($container));
 $app->get('/contact', '\App\Controllers\Contact:index')->setName('contact');
 $app->post('/contact', '\App\Controllers\Contact:mail');
 $app->get('/services', '\App\Controllers\Services:index')->setName('services');
-$app->get('/products', '\App\Controllers\Products:index')->setName('products');
-$app->get('/products/{id}', '\App\Controllers\Products:getProduct')->setName('product');
+$app->get('/products', '\App\Controllers\Products:index')->setName('products')->add(new App\Middlewares\Cart($container));
+$app->get('/products/{id}', '\App\Controllers\Products:getProduct')->setName('product')->add(new App\Middlewares\Cart($container));
 $app->get('/gallery', '\App\Controllers\Gallery:index')->setName('gallery');
+$app->get('/cart', '\App\Controllers\Cart:index')->setName('cart');
+$app->post('/cart', '\App\Controllers\Cart:add');
+$app->get('/cart/{id}', '\App\Controllers\Cart:remove');
 
 // Admin
 $app->group('/admin', function () {

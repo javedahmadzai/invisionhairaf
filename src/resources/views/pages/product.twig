@@ -1,9 +1,15 @@
 {% extends "layouts/master.twig" %}
 
 {% block content %}
+    {% if cart %}
+        <div style="padding:1rem; background:#000; text-align:center; color:#fff;">
+            {{ cart }}
+            <a href="{{ path_for('cart') }}" style="color:#333;background:#fff;padding:0.5rem; margin-left:50px;font-size:0.8rem; text-decoration:none;">VIEW CART</a>
+        </div>
+    {% endif %}
     <div class="container">
-        {% if error %}
-        <p class="form__message form__message--fade"><b>Error:</b> {{ error }}</p>
+        {% if success %}
+        <p class="form__message form__message--fade"><b>Error:</b> {{ success }}</p>
         {% endif %}
         {% if product %}
         <div class="product">
@@ -14,13 +20,12 @@
                 <div class="product__item__title">{{ product.title }}</div>
                 <div class="product__item__price"><b>Rs</b> {{ product.price }}</div>
                 <div class="product__item__description">{{ product.description }}</div>
-                <div class="product__item__group">
-                    <label for="spinner">Quantity</label>
-                    <input type="text" name="quantity" id="spinner">
-                </div>
-                <div class="product__item__group">
-                    <button>ADD TO CART<i class="fas fa-cart-plus"></i></button>
-                </div>
+                <form action="{{ path_for('cart') }}" method="post" class="product__item__group">
+                    <input type="hidden" name="id" value="{{ product.id }}">
+                    <input type="text" name="quantity" value="1" id="spinner" class="spinner">
+                    <button type="submit"><span>Add to cart</span><i class="fas fa-cart-plus"></i></button>
+                    {{ csrf_field | raw }}
+                </form>
             </div>
         </div>
         {% endif %}
