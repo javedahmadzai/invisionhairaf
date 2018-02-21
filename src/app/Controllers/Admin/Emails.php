@@ -12,7 +12,18 @@ class Emails extends Controller
         $emails = Mail::all()->sortByDesc('id');
 
         return $this->view->render($response, 'admin/emails.twig', [
-            'emails' => $emails,
+            'emails'       => $emails,
+            'emaildeleted' => $this->flash->getFirstMessage('admin.email-deleted'),
         ]);
+    }
+
+    public function delete($request, $response, $args)
+    {
+        $email = Mail::find($args['id']);
+        $email->delete();
+
+        $this->flash->addMessage('admin.email-deleted', "Email of date {$email->created_at} deleted successfuly!");
+
+        return $response->withRedirect($this->router->pathFor('admin.emails'));
     }
 }

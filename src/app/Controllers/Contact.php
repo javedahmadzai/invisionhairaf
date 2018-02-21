@@ -47,6 +47,15 @@ class Contact extends Controller
             return $response->withRedirect($this->router->pathFor('contact'));
         }
 
+        $saveMail          = new Mail;
+        $saveMail->fname   = $request->getParam('fname');
+        $saveMail->lname   = $request->getParam('lname');
+        $saveMail->email   = $request->getParam('email');
+        $saveMail->phone   = $request->getParam('phone');
+        $saveMail->subject = $request->getParam('subject');
+        $saveMail->message = $request->getParam('message');
+        $saveMail->save();
+
         try {
             $sendMail = new PHPMailer(true);
             $sendMail->setFrom(
@@ -63,15 +72,6 @@ class Contact extends Controller
 
             return $response->withRedirect($this->router->pathFor('contact'));
         }
-
-        $saveMail          = new Mail;
-        $saveMail->fname   = $request->getParam('fname');
-        $saveMail->lname   = $request->getParam('lname');
-        $saveMail->email   = $request->getParam('email');
-        $saveMail->phone   = $request->getParam('phone');
-        $saveMail->subject = $request->getParam('subject');
-        $saveMail->message = $request->getParam('message');
-        $saveMail->save();
 
         $this->flash->addMessage('contact-success', 'Successfully send your mail!');
 

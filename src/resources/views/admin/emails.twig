@@ -4,8 +4,18 @@
 
 {% block admin_content %}
     <div class="maillist">
-        {% for index, email in emails %}
+        {% if emaildeleted %}
+        <p class="form__message form__message--success form__message--fade"><b>Success:</b> {{ emaildeleted }}</p>
+        {% endif %}
+        {% for email in emails %}
             <div class="maillist__item">
+                <div class="maillist__item__label">
+                    <form action="{{ path_for('admin.emails') }}/{{email.id}}" method="post">
+                        <input type="hidden" name="_METHOD" value="DELETE">
+                        <button><img src="{{ base_url() }}/img/misc/delete-item.png" width="30"></button>
+                        {{ csrf_field | raw }}
+                    </form>
+                </div>
                 <div class="maillist__item__label"><b>First Name: </b>{{email.fname}}</div>
                 <div class="maillist__item__label"><b>Last Name: </b>{{email.lname}}</div>
                 <div class="maillist__item__label"><b>Email Address: </b>{{email.email}}</div>

@@ -31,6 +31,7 @@ $app->group('/admin', function () {
     $this->delete('/gallery/{id}', '\App\Controllers\Admin\Gallery:deleteImage');
     //-- emails
     $this->get('/emails', '\App\Controllers\Admin\Emails:index')->setName('admin.emails');
+    $this->delete('/emails/{id}', '\App\Controllers\Admin\Emails:delete');
     //-- products
     $this->get('/products', '\App\Controllers\Admin\Products:index')->setName('admin.products');
     $this->post('/products', '\App\Controllers\Admin\Products:addProduct');

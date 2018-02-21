@@ -8,21 +8,31 @@
     justify-content: space-between;
     flex-direction: column;
     color: #444;
-    border-bottom: 5px dashed #333;
 
     > b {
       background: #eee;
-      padding: 0.5rem;
       font-size: 0.9em;
+      background: #333;
+      color: #ddd;
+      padding: 0.3rem 1rem;
+      border-top-left-radius: 10px;
     }
 
     &__label {
-      padding: 0.3rem;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      padding: 0.3rem 1rem;
       font-size: 0.9em;
-      border: 1px solid #eee;
+      border: 1px dashed #3a3a3a;
+      background: #333;
+      color: #ddd;
 
-      &:nth-child(odd) {
-        background: #eee;
+      button {
+        cursor: pointer;
+        background: none;
+        border: none;
+        float: right;
+        display: block;
       }
 
       b {
@@ -38,8 +48,7 @@
       width: 760px;
       min-height: 200px;
       word-wrap: break-word;
-      border: 1px solid #eee;
-      border-bottom: 1px solid #eee;
+      border: 8px solid #333;
     }
   }
 }
