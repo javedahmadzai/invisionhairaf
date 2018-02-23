@@ -8,7 +8,7 @@ class Cart extends Controller
 {
     public function index($request, $response)
     {
-        $this->view->render($response, 'pages/cart.twig', [
+        return $this->view->render($response, 'pages/cart.twig', [
             'items' => $_SESSION['cart'],
         ]);
     }
@@ -28,7 +28,7 @@ class Cart extends Controller
 
         $_SESSION['cart'][$product->id] = array_replace($_SESSION['cart'][$product->id] ?? [], $cart)[$product->id];
 
-        $this->view->render($response, 'pages/cart.twig', [
+        return $this->view->render($response, 'pages/cart.twig', [
             'items' => $_SESSION['cart'],
         ]);
     }

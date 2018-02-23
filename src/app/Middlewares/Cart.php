@@ -11,6 +11,8 @@ class Cart extends Middleware
     {
         if (!empty($_SESSION['cart'])) {
             $this->view->getEnvironment()->addGlobal('cart_message', 'You have added some items to your cart.');
+        } elseif ($request->getUri()->getPath() == 'order') {
+            return $response->withRedirect($this->router->pathFor('cart'));
         }
 
         return $next($request, $response);

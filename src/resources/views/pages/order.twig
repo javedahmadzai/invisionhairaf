@@ -1,0 +1,57 @@
+{% extends "layouts/master.twig" %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="mail__title">Billing details</h2>
+        <form action="{{ base_url() }}/order" method="post" class="form form--wide">
+            {% if validation %}
+            <p class="form__message form__message--error form__message--fade" style="width:100%;">
+                <b>Errors:</b><br>
+                {% for key, error in validation %}
+                 {{key+1}} - {{ error }}<br>
+                {% endfor %}
+            </p>
+            {% endif %}
+
+            <div class="form__item">
+                <input type="text" name="fname" placeholder="First Name" value="{{ old.fname }}" class="form__item__input form__item__input--dark">
+                <input type="text" name="lname" placeholder="Last Name" value="{{ old.lname }}" class="form__item__input form__item__input--dark">
+            </div>
+
+            <div class="form__item">
+                <input type="text" name="company" placeholder="Company name" value="{{ old.company }}" class="form__item__input form__item__input--dark">
+            </div>
+
+            <div class="form__item">
+                <input type="text" name="address1" placeholder="House number and street name" value="{{ old.address1 }}" class="form__item__input form__item__input--dark">
+            </div>
+
+            <div class="form__item">
+                <input type="text" name="address2" placeholder="Apartment, suite, unit etc. (optional)" value="{{ old.address2 }}" class="form__item__input form__item__input--dark">
+            </div>
+
+            <div class="form__item">
+                <input type="text" name="city" placeholder="City" value="{{ old.city }}" class="form__item__input form__item__input--dark">
+            </div>
+
+            <div class="form__item">
+                <input type="email" name="email" placeholder="Email" value="{{ old.email }}" class="form__item__input form__item__input--dark">
+            </div>
+
+            <div class="form__item">
+                <input type="tel" name="phone" placeholder="Phone Number" value="{{ old.phone }}" class="form__item__input form__item__input--dark">
+            </div>
+
+            <div class="form__item">
+                <br>
+                <p style="border:1px solid #ddd; background:#111; color:#eee; padding:1rem;">1. Cash on delivery<br>2. Services available only in Afghanistan<br>3. Mobile: +93 799 311 350</p>
+            </div>
+
+            <div class="form__item">
+                <input type="submit" value="Place order" class="form__item__submit--fancy" style="border-radius:0;">
+            </div>
+
+            {{ csrf_field | raw }}
+        </form>
+    </div>
+{% endblock %}

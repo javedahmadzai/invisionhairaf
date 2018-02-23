@@ -1,0 +1,14 @@
+{% extends "layouts/admin.twig" %}
+
+{% block admin_heading %}Orders{% endblock %}
+
+{% block admin_content %}
+    {% for order in orders %}
+        <p>{{order.fname}} -> </p>
+        {% for item in order.items %}
+            <i>{{item.title}}</i> - Total: {{item.total}}<br>
+        {% endfor %}
+        <b>Total: </b> {{order.total}}
+        <hr>
+    {% endfor %}
+{% endblock %}

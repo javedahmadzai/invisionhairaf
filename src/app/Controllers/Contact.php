@@ -36,6 +36,7 @@ class Contact extends Controller
                 'fname'     => 'First name must contain letters and be 1 - 25 of length',
                 'lname'     => 'Last name must contain letters and be 1 - 25 of length',
                 'phone'     => 'Phone must be numeric and 1 - 15 in length',
+                'email'     => 'Please write a valid email',
                 'subject'   => 'Email Subject must be 1 to 255 letters',
                 'message'   => 'Message body must be 100 to 1000 in length',
                 'csrf_name' => 'Please try later!',

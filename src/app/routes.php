@@ -15,6 +15,8 @@ $app->get('/gallery', '\App\Controllers\Gallery:index')->setName('gallery');
 $app->get('/cart', '\App\Controllers\Cart:index')->setName('cart');
 $app->post('/cart', '\App\Controllers\Cart:add');
 $app->get('/cart/{id}', '\App\Controllers\Cart:remove');
+$app->get('/order', '\App\Controllers\Order:index')->setName('order')->add(new App\Middlewares\Cart($container));
+$app->post('/order', '\App\Controllers\Order:place');
 
 // Admin
 $app->group('/admin', function () {
@@ -40,4 +42,6 @@ $app->group('/admin', function () {
     $this->get('/slider', '\App\Controllers\Admin\Slider:index')->setName('admin.slider');
     $this->post('/slider', '\App\Controllers\Admin\Slider:addSlide');
     $this->delete('/slider/{id}', '\App\Controllers\Admin\Slider:deleteSlide');
+    //-- orders
+    $this->get('/orders', '\App\Controllers\Admin\Orders:index')->setName('admin.orders');
 })->add(new App\Middlewares\Admin($container));
