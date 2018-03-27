@@ -1,0 +1,52 @@
+.scards {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  @media #{$medium} {
+    flex-direction: row;
+  }
+}
+
+.scard {
+  transform: scale(1);
+  transition: all 300ms ease-in-out;
+
+  @media #{$medium} {
+    width: 40%;
+  }
+
+  &:hover {
+    transform: scale(1.08);
+
+    @media #{$medium} {
+      transform: scale(1.2);
+    }
+  }
+
+  &__title {
+    font-size: 0.7rem;
+    font-weight: 400;
+    background: #000;
+    color: #fff;
+    padding: 0.5rem;
+
+    @media #{$medium} {
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    @media #{$medium} {
+      width: 55%;
+
+      &--scale {
+        transform: scale(1.25);
+      }
+    }
+  }
+}

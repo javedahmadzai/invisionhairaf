@@ -2,5 +2,53 @@
 
 {% block content %}
     <div class="container">
+        <h1 class="services-banner">Services We Provide</h1>
+        <div class="services">
+            <div class="service">
+                <img src="{{ base_url() }}/img/misc/hairreplacement.jpg" class="service__img">
+                <div class="service__title">Non-Surgical (Hair Replacement)</div>
+                <div class="service__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa repellat enim delectus, praesentium cum minima iste amet harum rem, debitis illo pariatur assumenda explicabo illum deleniti impedit officia quae labore.</div>
+            </div>
+            <div class="service">
+                <img src="{{ base_url() }}/img/misc/dandruff.jpg" class="service__img">
+                <div class="service__title">Dandruff Treatment</div>
+                <div class="service__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore alias magni pariatur possimus eveniet modi, voluptatum in obcaecati at enim mollitia voluptatibus quisquam excepturi? Dolores unde, fuga ab culpa eos!</div>
+            </div>
+        </div>
+
+        <h1 class="services-banner">What Can Be Done?</h1>
+        <div class="services-box">
+            <p>You only have to contact our Invision Hair Care Center, We will give you its solution.</p>
+            <button class="button"><a href="{{ base_url() }}/contact">Contact Us</a></button>
+        </div>
+
+        <h1 class="services-banner">Diet</h1>
+        <div class="services-box">
+            <p>I’ve heard that just breathing fresh air can reduce the P. ovale population in the scalp. The problem is to teach these critters to breath fresh air.</p>
+
+            <div class="scards">
+                <div class="scard">
+                    <img src="{{ base_url() }}/img/misc/p3.jpg" class="scard__img scard__img--scale">
+                </div>
+            </div>
+        </div>
+
+        <h1 class="services-banner">Hair Loss</h1>
+        <div class="services-box">
+            <p>Reinventing shampoo for fine, thinning hair. Essential minerals and biotin prevent the early stages of hair loss restores luster, body and volume apply to damp hair, lather, and rinse repeat if necessary.</p>
+
+            <div class="scards">
+                <div class="scard">
+                    <h2 class="scard__title">DERMA EXFOLIATE SHAMPOO</h2>
+                    <img src="{{ base_url() }}/img/misc/p1.jpg" class="scard__img">
+                </div>
+                <div class="scard">
+                    <h2 class="scard__title">DERMA ACTIVATE SHAMPOO</h2>
+                    <img src="{{ base_url() }}/img/misc/p2.jpg" class="scard__img">
+                </div>
+            </div>
+
+            <button class="button"><a href="{{ base_url() }}/products">Shop Now</a></button>
+        </div>
     </div>
 {% endblock %}

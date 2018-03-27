@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 
         sass: {
             options: {
-                outputStyle: 'expanded'
+                outputStyle: 'compressed'
             },
             files: {
                 src: CONFIG.styles.src,
