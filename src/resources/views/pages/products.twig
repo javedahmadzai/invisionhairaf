@@ -1,6 +1,7 @@
 {% extends "layouts/master.twig" %}
 
 {% block content %}
+    {% include "includes/plate.twig" %}
     {% if cart_message %}
         <div style="padding:1rem; background:#000; text-align:center; color:#fff;">
             <span>{{cart_message}}</span>

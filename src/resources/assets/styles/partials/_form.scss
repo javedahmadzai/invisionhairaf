@@ -66,6 +66,10 @@
     align-items: center;
     margin: 0.5rem 0;
 
+    @media #{$small} {
+      flex-direction: column;
+    }
+
     &--col {
       flex-direction: column;
       align-items: left;
@@ -101,7 +105,14 @@
       outline: none;
       background: #fff;
 
+      @media #{$small} {
+        &:first-child {
+          margin-bottom: 1rem;
+        }
+      }
+
       @media #{$medium} {
+        margin-top: 0;
         flex-basis: 49%;
       }
 

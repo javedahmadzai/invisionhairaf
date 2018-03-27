@@ -1,6 +1,7 @@
 {% extends "layouts/master.twig" %}
 
 {% block content %}
+    {% include "includes/plate.twig" %}
     <div class="container">
         {% if items %}
         <h1 style="margin:2rem 0; font-weight:300; text-align:center; font-size:3rem; color:#4d4d4d;">Your Cart</h1>
@@ -38,13 +39,10 @@
             </div>
         </div>
         {% else %}
-        <div style="display:flex;margin:8rem 0;">
-            <i class="fas fa-shopping-cart" style="flex:1;font-size:10rem;text-align:center;color:#222;"></i>
-            <div style="flex:1;color:#333;">
-                <div style="font-size:2em;">Your cart is currently empty.</div>
-                <a href="{{ path_for('products') }}" style="display:inline-block;padding:1rem 2rem; margin:2rem 0; background:#000;color:#fff;">SHOP PRODUCTS</a>
-            </div>
-        </div>
+            <p>
+                <i class="fas fa-shopping-cart"> Your cart is currently empty.</i>
+            </p>
+            <a href="{{ path_for('products') }}" class="button">Shop Products</a>
         {% endif %}
     </div>
 {% endblock %}

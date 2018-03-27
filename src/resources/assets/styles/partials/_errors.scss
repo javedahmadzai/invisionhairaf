@@ -1,21 +1,32 @@
 .error {
-  margin: 2rem 0 6rem;
-  background: #fbfbfb;
-  padding: 7rem;
-  border-radius: 50% 0 50% 0;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.05);
+  margin: 2rem 1rem;
+
+  @media #{$medium} {
+    margin: 2rem 0 6rem;
+    padding: 4rem;
+  }
 
   &__title {
     color: #555;
     margin-bottom: 1rem;
-    font-weight: 300;
-    font-size: 3em;
+    font-weight: 400;
+    font-size: 1.5rem;
+
+    @media #{$medium} {
+      font-size: 3rem;
+    }
   }
 
   &__message {
     width: 700px;
-    font-size: 1.5em;
+    font-size: 0.9rem;
     font-weight: 300;
-    color: #333;
+    word-wrap: wrap;
+    width: 230px;
+
+    @media #{$medium} {
+      font-size: 1.5rem;
+      width: auto;
+    }
   }
 }
