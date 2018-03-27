@@ -39,10 +39,12 @@
             </div>
         </div>
         {% else %}
-            <p>
-                <i class="fas fa-shopping-cart"> Your cart is currently empty.</i>
-            </p>
-            <a href="{{ path_for('products') }}" class="button">Shop Products</a>
+            <div class="cart-error">
+                <i class="fas fa-shopping-cart cart-error__icon"></i>
+                <p class="cart-error__text">Your cart is currently empty.
+                    <a href="{{ path_for('products') }}" class="button">Shop Now</a>
+                </p>
+            </div>
         {% endif %}
     </div>
 {% endblock %}

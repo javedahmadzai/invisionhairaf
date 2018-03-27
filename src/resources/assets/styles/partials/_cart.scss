@@ -51,3 +51,41 @@
     }
   }
 }
+
+.cart-error {
+  display: flex;
+  flex-direction: column;
+
+  @media #{$medium} {
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin: 5rem 0 8rem;
+  }
+
+  &__icon {
+    font-size: 9rem;
+    text-align: center;
+    color: #0cc3ce;
+
+    @media #{$medium} {
+      font-size: 13rem;
+      margin-left: 5rem;
+    }
+  }
+
+  &__text {
+    margin: 2rem 0;
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-align: center;
+
+    @media #{$medium} {
+      margin-right: 5rem;
+    }
+
+    a {
+      font-size: 1rem;
+    }
+  }
+}
