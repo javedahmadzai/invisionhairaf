@@ -1,40 +1,67 @@
 .clients {
-  margin: 2rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  padding: 1rem;
 
-  &__heading {
-    text-align: center;
-    color: #444;
-    font-size: 2.5em;
-    font-weight: 300;
+  @media #{$medium} {
+    flex-direction: row;
   }
 
   &__rate {
+    flex: 0 0 100%;
+    padding-bottom: 3rem;
+    color: #555;
     text-align: center;
-    color: #666;
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-between;
   }
 }
 
 .client {
-  width: 23%;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #f9f9f9;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
+  transition: transform 400ms ease;
 
-  &__image {}
+  @media #{$medium} {
+    width: 48%;
+  }
+
+  @media #{$large} {
+    width: 24%;
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &__image {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 100%;
+  }
 
   &__info {
+    padding: 0.5rem;
+    color: #333;
+
     h3 {
-      font-weight: 300;
-      margin-bottom: 0.6rem;
+      margin: 0.7rem 0;
+      padding: 1rem;
+      border-radius: 5px;
+      background: #f9f9f9;
+      font-weight: 400;
+      text-align: center;
     }
 
-    padding: 1rem;
-    margin: 1rem 0 1rem 0;
-    border: 1px solid #f7f7f7;
-    background: #f9f9f9;
-    font-size: 0.9em;
-    line-height: 1.8em;
+    p {
+      font-size: 0.9rem;
+      text-align: justify;
+    }
   }
 }

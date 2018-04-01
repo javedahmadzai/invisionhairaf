@@ -1,5 +1,6 @@
 package-lock.json
 composer.lock
+yarn.lock
 vendor
 node_modules
 .idea

@@ -1,14 +1,13 @@
-const backToTop = document.getElementById('back-to-top');
-
-window.onscroll = function() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTop.style.display = "block";
+$(window).scroll(function() {
+    if ($(this).scrollTop() >= 100) {
+        $('#back-to-top').fadeIn(200);
     } else {
-        backToTop.style.display = "none";
+        $('#back-to-top').fadeOut(200);
     }
-};
+});
 
-backToTop.addEventListener('click', function(){
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+$('#back-to-top').click(function() {
+    $('body,html').animate({
+        scrollTop : 0
+    }, 500);
 });

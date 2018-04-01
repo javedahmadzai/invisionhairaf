@@ -4,59 +4,61 @@
     {% include "includes/slider.twig" %}
     {% include "includes/plate.twig" %}
     <div class="container">
-        <h2 class="why-us">Why us?</h2>
-        <iframe style="margin:2rem auto; display:block;" width="854" height="480" src="https://www.youtube.com/embed/NLO03ofTIP4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <div class="blocks">
-            <div class="block">
-                <h2 class="block__title">Non-Surgical (Hair Replacement)</h2>
-                <p class="block__content">Non-surgical hair replacement procedures attach a thin transparent layer of polyurethane to the scalp, forming a tight membrane which acts as a second layer of skin.</p>
+            <div class="blocks__block">
+                <h2>Non-Surgical (Hair Replacement)</h2>
+                <p>Non-surgical hair replacement procedures attach a thin transparent layer of polyurethane to the scalp, forming a tight membrane which acts as a second layer of skin.</p>
             </div>
-            <div class="block">
-                <h2 class="block__title">Toppik Hair Building Fiber?</h2>
-                <p class="block__content">Toppik Hair Building Fibers, made of colored keratin protein, blend undetectable with existing hair strands to instantly create the appearance of naturally thick, full hair. <b>Toppik</b> Hair Fibers resist wind, rain, and perspiration for long-lasting results in all conditions. Available in nine shades that can be mixed to match virtually any hair color, Hair Fibers work for all hair types and textures. Also great for part lines, covering extension tracks and touching up roots between hair color appointments. Easily washes out with shampoo.</p>
-                </div>
+            <div class="blocks__block">
+                <h2>Toppik Hair Building Fiber?</h2>
+                <p>Toppik Hair Building Fibers, made of colored keratin protein, blend undetectable with existing hair strands to instantly create the appearance of naturally thick, full hair. <b>Toppik</b> Hair Fibers resist wind, rain, and perspiration for long-lasting results in all conditions. Available in nine shades that can be mixed to match virtually any hair color, Hair Fibers work for all hair types and textures. Also great for part lines, covering extension tracks and touching up roots between hair color appointments. Easily washes out with shampoo.</p>
             </div>
-            <div class="block">
-                <h2 class="block__title">Delivery &amp; Satisfaction </h2>
-                <p class="block__content">
+            <div class="blocks__block">
+                <h2>Delivery &amp; Satisfaction </h2>
+                <p>
                    Choose Cash on Delivery and you need to pay when delivery person handed over you the product, If the client isn’t satisfied our job isn’t done, and we leave no job unfinished.
                 </p>
             </div>
         </div>
+
+        <h1 class="heading left"><b>WHY</b> INVISION?</h1>
+
+        <iframe src="https://www.youtube.com/embed/NLO03ofTIP4" frameborder="0" allow="autoplay; encrypted-media" class="video-invision" allowfullscreen></iframe>
+
+        <h2 class="heading right">Clients &amp; Testimonials</h2>
+
         <div class="clients">
-            <h2 class="clients__heading">Clients &amp; Testimonials</h2>
-            <p class="clients__rate">More then 127 000 of happy customers</p>
-            <div class="container">
-                <div class="client">
-                    <img src="{{ base_url()}}/img/misc/client.jpg" alt="" class="client__image">
-                    <div class="client__info">
-                        <h3>Some Name</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum minima enim. Nulla laboriosam expedita optio nobis maxime, veritatis illo.</p>
-                    </div>
-                </div>
-                 <div class="client">
-                    <img src="{{ base_url()}}/img/misc/client.jpg" alt="" class="client__image">
-                    <div class="client__info">
-                        <h3>Some Name</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum minima enim. Nulla laboriosam expedita optio nobis maxime, veritatis illo.</p>
-                    </div>
-                </div>
-                 <div class="client">
-                    <img src="{{ base_url()}}/img/misc/client.jpg" alt="" class="client__image">
-                    <div class="client__info">
-                        <h3>Some Name</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum minima enim. Nulla laboriosam expedita optio nobis maxime, veritatis illo.</p>
-                    </div>
-                </div>
-                 <div class="client">
-                    <img src="{{ base_url()}}/img/misc/client.jpg" alt="" class="client__image">
-                    <div class="client__info">
-                        <h3>Some Name</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum minima enim. Nulla laboriosam expedita optio nobis maxime, veritatis illo.</p>
-                    </div>
+            <div class="clients__rate">More then 20,000 of happy customers</div>
+            <div class="client">
+                <img src="{{ base_url()}}/img/misc/client.jpg" class="client__image">
+                <div class="client__info">
+                    <h3>Some Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ab quam cupiditate maxime aperiam molestias iste quo asperiores possimus quis qui excepturi, exercitationem repudiandae eius id quas beatae quia facilis.</p>
                 </div>
             </div>
-            <a href="{{ path_for('contact') }}" class="button">Contact Us</a>
+            <div class="client">
+                <img src="{{ base_url()}}/img/misc/client.jpg" class="client__image">
+                <div class="client__info">
+                    <h3>Some Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum minima enim. Nulla laboriosam expedita optio nobis maxime, veritatis illo.</p>
+                </div>
+            </div>
+            <div class="client">
+                <img src="{{ base_url()}}/img/misc/client.jpg" class="client__image">
+                <div class="client__info">
+                    <h3>Some Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, provident aliquid recusandae quis accusamus amet repudiandae alias sapiente totam natus neque iusto veritatis magnam odio quae doloribus pariatur officia, sed eligendi ea repellendus, a fuga.</p>
+                </div>
+            </div>
+            <div class="client">
+                <img src="{{ base_url()}}/img/misc/client.jpg" class="client__image">
+                <div class="client__info">
+                    <h3>Some Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus quis beatae neque deleniti fugiat omnis provident illo nam mollitia tempore minima, ducimus consequatur ea dolore vero, ad suscipit! Eligendi quam recusandae tenetur iste.</p>
+                </div>
+            </div>
         </div>
+
+        <a href="{{ path_for('contact') }}" class="button">Contact Us</a>
     </div>
 {% endblock %}

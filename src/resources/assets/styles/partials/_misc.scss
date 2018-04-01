@@ -1,23 +1,22 @@
 .button {
-  border: 0;
-  padding: 0.5rem 1.5rem;
-  background: #000;
-  color: #fff;
-  font-size: 0.8em;
-  font-weight: 600;
-  cursor: pointer;
-  outline: 0;
-  margin: 1rem auto;
   display: block;
-  text-align: center;
+  width: 8rem;
+  margin: 1rem auto;
+  padding: 0.5rem 1.5rem;
   border: 2px solid #000;
   border-radius: 3px;
-  width: 8rem;
+  outline: 0;
+  background: #000;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
 
   @media #{$medium} {
+    width: 250px;
     padding: 1rem 5rem;
     font-size: 1rem;
-    width: 250px;
   }
 
   &:hover {
@@ -28,23 +27,65 @@
 }
 
 .back-to-top {
-  display: none;
+  @include animate(rotate, 300ms);
+
   position: fixed;
-  bottom: 20px;
   right: 30px;
+  bottom: 20px;
   z-index: 99;
-  font-size: 1.5rem;
-  border: none;
+  display: none;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 100%;
   outline: none;
   background: #0cc3ce;
-  color: white;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  color: #fff;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 100%;
-
-  @include animate(rotate, 300ms);
 
   &:hover {
     background: darken(#0cc3ce, 5%);
+  }
+}
+
+.heading {
+  margin: 5rem 0;
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.5rem;
+  color: #999;
+  text-align: center;
+
+  @media #{$medium} {
+    font-size: 4rem;
+  }
+
+  &.left {
+    background: linear-gradient(73deg, #fff, #8a2be2);
+    color: #fff;
+  }
+
+  &.right {
+    background: linear-gradient(73deg, #81dddd, #fff);
+    color: #fff;
+  }
+}
+
+.video-invision {
+  display: block;
+  width: 90%;
+  height: 300px;
+  margin: 2rem auto;
+
+  @media #{$medium} {
+    width: 500px;
+    height: 300px;
+  }
+
+  @media #{$large} {
+    width: 880px;
+    height: 400px;
   }
 }

@@ -1,7 +1,18 @@
+files:
+  include: 'src/resources/assets/styles/**/*.s+(a|c)ss'
+
+options:
+  formatter: stylish
+  merge-default-rules: true
+
 rules:
+  bem-depth:
+    - 0
+    - max-depth: 1
+
   border-zero:
     - 1
-    - convention: '0'
+    - convention: zero
 
   brace-style:
     - 1
@@ -10,7 +21,7 @@ rules:
 
   class-name-format:
     - 1
-    - convention: '([a-z0-9]+-?)+'
+    - convention: strictbem
 
   clean-import-paths:
     - 1
@@ -50,7 +61,7 @@ rules:
 
   id-name-format:
     - 1
-    - convention: '([a-z0-9]+-?)+'
+    - convention: hyphenatedlowercase
 
   indentation:
     - 1
@@ -69,11 +80,11 @@ rules:
 
   nesting-depth:
     - 1
-    - max-depth: 3
+    - max-depth: 5
 
   no-color-keywords: 1
 
-  no-color-literals: 1
+  no-color-literals: 0
 
   no-css-comments: 0
 
@@ -82,6 +93,8 @@ rules:
   no-duplicate-properties: 1
 
   no-empty-rulesets: 1
+
+  no-extends: 0
 
   no-ids: 1
 
@@ -103,6 +116,8 @@ rules:
 
   no-trailing-zero: 1
 
+  no-transition-all: 0
+
   no-url-protocols: 1
 
   no-vendor-prefixes:
@@ -113,16 +128,12 @@ rules:
 
   placeholder-name-format:
     - 1
-    - convention: '([a-z0-9]+-?)+'
+    - convention: hyphenatedlowercase
 
   property-sort-order:
     - 1
-    -
-      ignore-custom-properties: true
+    - ignore-custom-properties: false
       order:
-        # Specific - CSS property order
-        # https://gist.github.com/ncoden/d42f55df7c7970f548a02cd3468f9c86
-
         # Content
         - 'content'
 
@@ -343,6 +354,37 @@ rules:
         - 'set-link-source'
         - 'unicode-bidi'
         - 'speak'
+  property-units:
+    - 1
+    - global:
+        - ch
+        - em
+        - ex
+        - rem
+        - cm
+        - in
+        - mm
+        - pc
+        - pt
+        - px
+        - q
+        - vh
+        - vw
+        - vmin
+        - vmax
+        - deg
+        - grad
+        - rad
+        - turn
+        - ms
+        - s
+        - Hz
+        - kHz
+        - dpi
+        - dpcm
+        - dppx
+        - '%'
+      per-property: {}
 
   quotes:
     - 1

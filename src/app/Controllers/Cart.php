@@ -9,7 +9,7 @@ class Cart extends Controller
     public function index($request, $response)
     {
         return $this->view->render($response, 'pages/cart.twig', [
-            'items' => $_SESSION['cart'],
+            'items' => $_SESSION['cart'] ?? null,
         ]);
     }
 
