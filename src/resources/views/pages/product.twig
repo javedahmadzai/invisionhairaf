@@ -16,7 +16,7 @@
             </div>
             <div class="product__item">
                 <div class="product__item__title">{{ product.title }}</div>
-                <div class="product__item__price"><b>Rs</b> {{ product.price }}</div>
+                <div class="product__item__price">{{ product.price }} <b>AFN</b></div>
                 <div class="product__item__description">{{ product.description }}</div>
                 <form action="{{ path_for('cart') }}" method="post" class="product__item__group">
                     <input type="hidden" name="id" value="{{ product.id }}">
@@ -34,12 +34,12 @@
                 <div class="related-products__item__image">
                     <img src="{{ base_url() }}/img/products/{{relatedProduct.image}}">
                 </div>
-                <div class="related-products__item__title">
+                <h3 class="related-products__item__title">
                     {{relatedProduct.title}}
-                </div>
-                <div class="related-products__item__price">
-                    <b>Rs</b>{{relatedProduct.price}}
-                </div>
+                </h3>
+                <span class="related-products__item__price">
+                    {{relatedProduct.price}} <b>AFN</b>
+                </span>
             </div>
             {% endfor %}
         </div>

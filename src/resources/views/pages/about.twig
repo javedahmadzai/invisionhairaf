@@ -2,47 +2,53 @@
 
 {% block content %}
     <div class="container">
-        <center><img src="{{ base_url() }}/img/misc/border-top.png">
-
-        <h1 style="font-size:3em; font-weight:300;">Profile</h1>
-        <p style="line-height:2em; text-align:justify;">Invision Hair Care Center is an Afghan chain of cosmetic hair restoration and are pioneers of this technology in Afghanistan. It is a member of the valid Councils of Hair Loss and is associated with more than 10 national and sub-national partners.<br><br>
-        In the world of hair replacement, companies come and go, and promises are made and never kept. That’s why Invision is unique. For nearly 12 years, Invision has led the hair replacement industry with product development, patents and the best quality products. Chances are, if you’re looking into another hair replacement company, they’re utilizing the technology that Invision developed years ago, and we have the patents to prove it. Simply put, Invision can keep its promises, because Invision has the technology.<br>
-        Let’s look at the facts. Since Invision was founded in Kabul, Afghanistan,. That’s growth and stability, two things that are hard to find in the hair replacement industry. When you become an Invision client, you’ll know that if you travel in Afghanistan, Invision will be there, today and tomorrow. Invision truly is an National company.<br>
-        Since the patent of permanent hair replacement over two decades ago, Invision has been at the forefront of new technology. Never has that been more evident than in the development of Invision, the art, science and technology of hair restoration.<br>
-        And it doesn’t end there. Invision is committed to helping you keep the hair you have, and to taking better care of yourself. you can have a healthier scalp and thicker, more beautiful hair.<br>
-        As always, Invision can provide services for both men and women. The Invision can fit your specific hair loss situation, whether your hair loss is extensive, moderate or minimal.<br>
-        Invision welcomes the opportunity to serve you, and it all starts with a simple, free consultation with an Invision specialist. Don’t wait, call today for an appointment.<br>
-        </p>
+        <h1 class="heading right">Profile</h1>
+        <div class="profile-info">
+            <p>Invision Hair Care Center is an Afghan chain of cosmetic hair restoration and are pioneers of this technology in Afghanistan. It is a member of the valid Councils of Hair Loss and is associated with more than 10 national and sub-national partners.<br><br>
+            In the world of hair replacement, companies come and go, and promises are made and never kept. That’s why Invision is unique. For nearly 12 years, Invision has led the hair replacement industry with product development, patents and the best quality products. Chances are, if you’re looking into another hair replacement company, they’re utilizing the technology that Invision developed years ago, and we have the patents to prove it. Simply put, Invision can keep its promises, because Invision has the technology.<br>
+            Let’s look at the facts. Since Invision was founded in Kabul, Afghanistan,. That’s growth and stability, two things that are hard to find in the hair replacement industry. When you become an Invision client, you’ll know that if you travel in Afghanistan, Invision will be there, today and tomorrow. Invision truly is an National company.<br>
+            Since the patent of permanent hair replacement over two decades ago, Invision has been at the forefront of new technology. Never has that been more evident than in the development of Invision, the art, science and technology of hair restoration.<br>
+            And it doesn’t end there. Invision is committed to helping you keep the hair you have, and to taking better care of yourself. you can have a healthier scalp and thicker, more beautiful hair.<br>
+            As always, Invision can provide services for both men and women. The Invision can fit your specific hair loss situation, whether your hair loss is extensive, moderate or minimal.<br>
+            Invision welcomes the opportunity to serve you, and it all starts with a simple, free consultation with an Invision specialist. Don’t wait, call today for an appointment.<br>
+            </p>
+        </div>
         <a href="{{ path_for('contact') }}" class="button">Contact Us</a>
-        <img src="{{ base_url() }}/img/misc/border-bottom.png"></center>
 
-        <center><h1 style="font-size:3em; font-weight:300; margin-bottom:2rem;">Mission &amp; Vision</h1></center>
+        <h1 class="heading left">Mission &amp; Vision</h1>
         <div id="accordion" class="accordion">
-            <h3>1</h3>
+            <h3>Diversified customer base</h3>
             <p>To have a diversified and satisfied customer base.</p>
 
-            <h3>2</h3>
+            <h3>Innovative hair solution</h3>
             <p>To serve the customers through innovative hair solution.</p>
 
-            <h3>3</h3>
+            <h3>High quality services</h3>
             <p>To offer higher quality services in lower price.</p>
 
-            <h3>4</h3>
+            <h3>Leading industry</h3>
             <p>To be a recognized and accepted Afghan leading Hair Care Center.</p>
 
-            <h3>5</h3>
+            <h3>Career development</h3>
             <p>To create a good working environment for employees and foster teamwork and career development.</p>
 
-            <h3>6</h3>
+            <h3>Transparency</h3>
             <p>To operate ethically and maintain transparency in operations.</p>
         </div>
 
-        <center>
-            <h1 style="font-size:3em; font-weight:300; margin:3rem 0;">Founder Biography</h1>
-            <img src="{{ base_url() }}/img/misc/profile.jpg" style="width:20%;border-radius:50%;">
-            <h5 style="font-size:1em; font-weight:600; margin: 1rem; padding: 1rem; background:#efefef; width:20%;">Nangaily Aslamzai</h5>
-        </center>
+        <h1 class="heading dark">Leaders Biography</h1>
 
-        <img src="{{ base_url() }}/img/misc/foot.png">
+        <div class="bio">
+            <h4>Founder &amp; CEO</h1>
+            <img src="{{ base_url() }}/img/misc/janagha.jpg">
+            <h5>Jan Agha Azizi</h5>
+            <p>Mr.Jan Agha Azizi is a leading trichologiest and founder of Invision Hair Care Center, Afghanistan with an aim to make world-renowned hair restoration treatment available to all.</p>
+        </div>
+        <div class="bio">
+            <h4>Co-Founder</h1>
+            <img src="{{ base_url() }}/img/misc/nangyalay.jpg">
+            <h5> Nangialay Aslamzai</h5>
+            <p>Mr. Nangialay Aslamzai is Co-Founder of Invision Hair Care Center and has award from Hair plus International Club as a consultant Mr. Aslamzai has made many peoples life beautiful and stylish he has established Invision Hair Care Center over 12 years ago with a wide mission that already has their outputs.</p>
+        </div>
     </div>
 {% endblock %}

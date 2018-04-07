@@ -8,6 +8,7 @@ module.exports = function (grunt) {
 
         sass: {
             options: {
+                sourceMap: false,
                 outputStyle: 'compressed'
             },
             files: {
@@ -42,13 +43,23 @@ module.exports = function (grunt) {
             }
         },
 
+        uglify: {
+            options: {
+                sourceMap: false
+            },
+            files: {
+                src: CONFIG.scripts.dist,
+                dest: CONFIG.scripts.dist
+            }
+        },
+
         watch: {
             options: {
                 spawn: false
             },
             styles: {
                 files: CONFIG.styles.dir,
-                tasks: ['sass', 'postcss']
+                tasks: ['sass']
             },
             scripts: {
                 files: CONFIG.scripts.dir,
@@ -64,10 +75,12 @@ module.exports = function (grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-browserify');
 
-    grunt.registerTask('build', ['sass', 'postcss', 'browserify']);
+    grunt.registerTask('build', ['sass', 'browserify']);
+    grunt.registerTask('production', ['build', 'postcss', 'uglify']);
     grunt.registerTask('default', ['build', 'watch']);
 };

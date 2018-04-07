@@ -11,13 +11,16 @@
 @import 'global';
 @import 'layout';
 
+// Templates
+@import 'template/header';
+@import 'template/footer';
+
 // Partials
 @import 'partials/misc';
 @import 'partials/form';
 @import 'partials/panel';
 @import 'partials/list';
 @import 'partials/errors';
-
 @import 'partials/maillist';
 @import 'partials/contact';
 @import 'partials/gallery';
@@ -32,7 +35,3 @@
 @import 'partials/blocks';
 @import 'partials/clients';
 @import 'partials/plate';
-
-// Components
-@import 'template/header';
-@import 'template/footer';

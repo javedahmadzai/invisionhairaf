@@ -1,9 +1,15 @@
 .accordion {
+  margin: 0 auto;
+
+  @media #{$medium} {
+    width: 60%;
+  }
+
   h3 {
     font-size: 2em;
     color: #eee;
     cursor: pointer;
-    background: #2a1c0e;
+    background: #555;
     border: 1px solid #eeeeee;
     outline: 0;
   }

@@ -51,17 +51,32 @@
     color: #333;
 
     h3 {
-      margin: 0.7rem 0;
-      padding: 1rem;
+      margin: 0.6rem 0;
+      padding: 0.6rem 1rem;
       border-radius: 5px;
       background: #f9f9f9;
       font-weight: 400;
       text-align: center;
     }
 
+    h4 {
+      margin: 0.6rem 0;
+      font-size: 0.8rem;
+      color: #777;
+    }
+
     p {
       font-size: 0.9rem;
-      text-align: justify;
+      font-style: italic;
+      color: #888;
+      text-align: left;
+
+      &::before {
+        content: '\0022';
+        margin: 0.2rem;
+        font-size: 1.4rem;
+        color: #ccc;
+      }
     }
   }
 }
