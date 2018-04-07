@@ -24,7 +24,7 @@ class Order extends Controller
             $validation = Validator::key('fname', Validator::stringType()->length(1, 25)->notEmpty())
                 ->key('lname', Validator::stringType()->length(1, 25)->notEmpty())
                 ->key('company', Validator::stringType())
-                ->key('address1', Validator::stringType()->length(20, 200))
+                ->key('address1', Validator::stringType()->length(5, 200))
                 ->key('address2', Validator::stringType())
                 ->key('city', Validator::stringType()->length(1, 25)->notEmpty())
                 ->key('email', Validator::email()->length(1, 64)->notEmpty())
