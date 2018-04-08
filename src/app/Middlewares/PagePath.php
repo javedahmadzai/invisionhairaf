@@ -9,9 +9,9 @@ class PagePath extends Middleware
 {
     public function __invoke(Request $request, Response $response, callable $next)
     {
-        $uri = trim($request->getUri()->getPath(), DIRECTORY_SEPARATOR);
+        $uri = trim($request->getUri()->getPath(), '/');
+        $this->view->getEnvironment()->addGlobal('uri', $uri ?: '/');
 
-        $this->view->getEnvironment()->addGlobal('uri', $uri ?? '/');
         return $next($request, $response);
     }
 }
