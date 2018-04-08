@@ -88,3 +88,13 @@ CREATE TABLE orderitem (
     FOREIGN KEY (oid) REFERENCES orders(id),
     FOREIGN KEY (pid) REFERENCES products(id)
 );
+
+CREATE TABLE hairreplacement (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    image VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    body TEXT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+);

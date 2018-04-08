@@ -1,0 +1,17 @@
+<div id="disqus_thread"></div>
+
+<script>
+var disqus_config = function () {
+    this.page.url = `{{ base_url() }}`;
+    this.page.identifier = `{{ path_for('products') }}/{{ product.id }}`;
+};
+
+(function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://invisionhairaf.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+
+<script id="dsq-count-scr" src="//invisionhairaf.disqus.com/count.js" async></script>

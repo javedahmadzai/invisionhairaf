@@ -1,0 +1,30 @@
+{% extends "layouts/master.twig" %}
+
+{% block content %}
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1796560237320767&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="container">
+        {% if not page %}
+        <h1 style="text-align:center; font-size:4rem; color:#ccc; font-weight:300;">No Post Yet!</h1>
+        {% else %}
+        <img src="{{base_url()}}/img/misc/{{ page.image }}" style="height:300px; width:100%;">
+        <p style="background:#222; color:#eee; padding:1rem; font-size:0.9rem;">{{page.updated_at}}</p>
+        <h1 style="text-align:left; border-left:5px solid #222; border-bottom-left-radius:10%; font-size:2rem; font-weight:300; letter-spacing:-2px; padding:1rem;">{{page.title}}</h1>
+        <div class="fb-share-button"
+            style="margin-top:1rem;"
+            data-href="{{path_for(uri)}}"
+            data-layout="button_count"
+            data-size="large"
+            data-mobile-iframe="true">
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+        </div>
+        <div style="margin-top:2rem; background:#f9f9f9; padding:2rem;">{{ page.body | raw }}</div>
+        {% endif %}
+    </div>
+{% endblock %}

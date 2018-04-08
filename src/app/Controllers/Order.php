@@ -38,7 +38,7 @@ class Order extends Controller
                 'lname'     => 'Last name must contain letters and be 1 - 25 of length',
                 'phone'     => 'Phone must be numeric and 1 - 15 in length',
                 'email'     => 'Please write a valid email address',
-                'address1'  => 'Address must be between 20 and 200 characters',
+                'address1'  => 'Address must be between 5 and 200 characters',
                 'city'      => 'Write a valid city name between 1 - 25 characters',
                 'csrf_name' => 'Please try later!',
             ]);

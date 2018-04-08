@@ -1,0 +1,47 @@
+{% extends "layouts/admin.twig" %}
+
+{% block admin_heading %}Hair Replacement{% endblock %}
+
+{% block admin_content %}
+    <div class="cpanel">
+        <form action="{{ path_for('admin.hairreplacement') }}" method="post" enctype="multipart/form-data" class="form form--wide form--dark">
+            <h1 class="form__heading">Hair Replacement</h1>
+            {% if error %}
+            <p class="form__message form__message--error form__message--fade"><b>Error:</b> {{ error }}</p>
+            {% elseif success %}
+            <p class="form__message form__message--success form__message--fade"><b>Success:</b> {{ success }}</p>
+            {% endif %}
+
+            <div class="form__item">
+                <label for="title" class="form__item__label form__item__label--frame">Page Title: </label>
+                <input type="text" name="title" placeholder="Product title..." value="{{ page.title }}" class="form__item__input form__item__input--full">
+            </div>
+
+            <div class="form__item">
+                <label for="image" class="form__item__label form__item__label--frame">Page Image: </label>
+                <input type="file" name="image" class="form__item__input form__item__input--full form__item__input--file">
+            </div>
+
+            <div class="form__item">
+                {% if not page.image %}
+                <p>No Image Uploaded Yet!</p>
+                {% else %}
+                <img src="{{base_url()}}//img/misc/{{page.image}}" style="width:100%;">
+                {% endif %}
+            </div>
+
+            <div class="form__item form__item--col">
+                <label for="body" class="form__item__label form__item__label--frame">Page Body: </label>
+                <textarea name="body" rows="25" class="form__item__textarea">{{ page.body }}</textarea>
+            </div>
+
+            <div class="form__item">
+                <input type="submit" value="Update Page" class="form__item__submit form__item__submit--dark">
+            </div>
+
+            {{ csrf_field | raw }}
+        </form>
+    </div>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+{% endblock %}

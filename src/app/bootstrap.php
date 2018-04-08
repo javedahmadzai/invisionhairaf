@@ -12,6 +12,7 @@ $settings['settings'] = [
     'gallery_path'           => __DIR__ . '/../img/gallery/',
     'products_path'          => __DIR__ . '/../img/products/',
     'slider_path'            => __DIR__ . '/../img/slider/',
+    'misc_path'              => __DIR__ . '/../img/misc/',
     'db'                     => [
         'driver'    => 'mysql',
         'host'      => 'localhost',

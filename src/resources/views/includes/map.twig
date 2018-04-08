@@ -1,4 +1,3 @@
-<div id="map" class="map"></div>
 <style>
 .map {
     width: 100%;
@@ -11,25 +10,28 @@
     }
 }
 </style>
+
+<div id="map" class="map"></div>
+
 <script>
-function initMap() {
+    function initMap() {
     var settings = {
         position: {
             lat: 34.544838,
             lng: 69.152089
         },
-        title: "Invision Hair Care Center, Kabul-Afghanistan",
-        content: "Invision Hair Care Center, Kabul-Afghanistann"
+        title: 'Invision Hair Care Center, Kabul-Afghanistan',
+        content: 'Invision Hair Care Center, Kabul-Afghanistann'
     };
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
-      center: settings.position
+        zoom: 15,
+        center: settings.position
     });
 
     var marker = new google.maps.Marker({
-      position: settings.position,
-      map: map,
+        position: settings.position,
+        map: map,
     });
 
     var infowindow = new google.maps.InfoWindow({
@@ -39,4 +41,5 @@ function initMap() {
     infowindow.open(map, marker);
 }
 </script>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyHWm6orZclDIdEbPHVroYgdTEMkKpzc4&callback=initMap" async defer></script>

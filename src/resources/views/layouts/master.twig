@@ -4,7 +4,13 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:url" content="{{base_url()}}/{{uri}}">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Invision Hair Care Center">
+        <meta property="og:description" content="Invision Hair Care Center is the top quality hair products provider we have the top most quality products in the industry.">
+        <meta property="og:image" content="{{base_url()}}/img/misc/logo.png">
         <title>Invision Hair Afghanistan</title>
+        <link rel="icon" href="{{base_url()}}/img/misc/logo.png">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
@@ -18,7 +24,9 @@
         <div class="wait-till-load"><div class="spinner-icon"></div></div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        {% if  uri == '/' %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jssor-slider/27.1.0/jssor.slider.min.js"></script>
+        {% endif %}
         <script src="{{ base_url() }}/js/app.js"></script>
     </body>
 </html>
