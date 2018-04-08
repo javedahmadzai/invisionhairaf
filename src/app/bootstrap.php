@@ -28,7 +28,7 @@ $settings['settings'] = [
 
 if ($_SERVER['HTTP_HOST'] != 'localhost') {
     $settings['settings'] = array_replace_recursive($settings['settings'], [
-        'displayErrorDetails'    => false,
+        // 'displayErrorDetails'    => false,
         'addContentLengthHeader' => true,
         'routerCacheFile'        => __DIR__ . '/../cache/routes.cache.php',
         'twigCache'              => __DIR__ . '/../cache',
