@@ -10,9 +10,7 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     <div class="container">
-        {% if not page %}
-        <h1 style="text-align:center; font-size:4rem; color:#ccc; font-weight:300;">No Post Yet!</h1>
-        {% else %}
+        {% if page %}
         <img src="{{base_url()}}/img/misc/{{ page.image }}" style="height:300px; width:100%;">
         <p style="background:#222; color:#eee; padding:1rem; font-size:0.9rem;">{{page.updated_at}}</p>
         <h1 style="text-align:left; border-left:5px solid #222; border-bottom-left-radius:10%; font-size:2rem; font-weight:300; letter-spacing:-2px; padding:1rem;">{{page.title}}</h1>
@@ -25,6 +23,8 @@
             <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
         </div>
         <div style="margin-top:2rem; background:#f9f9f9; padding:2rem;">{{ page.body | raw }}</div>
+        {% else %}
+        <h1 style="text-align:center; font-size:4rem; color:#ccc; font-weight:300;">No Post Yet!</h1>
         {% endif %}
     </div>
 {% endblock %}
