@@ -3,49 +3,76 @@
   flex-direction: column;
 
   .order {
+    display: grid;
     margin-top: 2rem;
     border: 2px solid #222;
-    display: grid;
-    grid-template-columns: 50% 50%;
     font-size: 0.9rem;
-
-    &__header {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      background: #222 !important;
-      color: #ccc;
-    }
-
-    &__full {
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
+    grid-template-columns: 50% 50%;
 
     .order__item {
       display: flex;
-      border: 1px solid #ccc;
       padding: 0.5rem;
+      border: 1px solid #222;
 
-      .order__label {
-        width: 100px;
-        color: #666;
+      &.full {
+        grid-column-start: 1;
+        grid-column-end: 3;
       }
 
-      &.black {
+      &.header {
+        display: flex;
+        justify-content: space-between;
         background: #222;
         color: #ccc;
+
+        button {
+          padding: 0.4rem 1rem;
+          border: 0;
+          background: #555;
+          color: #ccc;
+          cursor: pointer;
+
+          &:hover {
+            background: #ccc;
+            color: #555;
+          }
+        }
       }
-    }
 
-    &__orders {
-      padding: 1rem;
+      &.list {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 1rem;
 
-      .items {
-        display: grid;
-        grid-template-columns: 70% 10% 20%;
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid #333;
+        .items-head {
+          display: grid;
+          margin-bottom: 1rem;
+          padding-bottom: 0.5rem;
+          border-bottom: 1px dashed #888;
+          grid-template-columns: 5% 50% 15% 15% auto;
+          grid-gap: 1%;
+        }
+
+        .items-list {
+          display: grid;
+          grid-template-columns: 5% 50% 15% 15% auto;
+          grid-gap: 1%;
+        }
+
+        .items-total {
+          display: grid;
+          margin-top: 1rem;
+          padding-top: 0.5rem;
+          border-top: 1px dashed #888;
+          grid-template-columns: 88% auto;
+          grid-gap: 1%;
+        }
+      }
+
+      .label {
+        width: 100px;
+        color: #666;
       }
     }
   }

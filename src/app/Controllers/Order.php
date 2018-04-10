@@ -2,10 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Models\Customers as Customer;
 use App\Models\OrderItem;
 use App\Models\Orders;
-use App\Models\Products as Product;
 use Respect\Validation\Exceptions\NestedValidationException;
 use Respect\Validation\Validator;
 
@@ -49,19 +47,15 @@ class Order extends Controller
             return $response->withRedirect($this->router->pathFor('order'));
         }
 
-        $customer           = new Customer;
-        $customer->fname    = $request->getParam('fname');
-        $customer->lname    = $request->getParam('lname');
-        $customer->company  = $request->getParam('company');
-        $customer->address1 = $request->getParam('address1');
-        $customer->address2 = $request->getParam('address2');
-        $customer->city     = $request->getParam('city');
-        $customer->email    = $request->getParam('email');
-        $customer->phone    = $request->getParam('phone');
-        $customer->save();
-
-        $order      = new Orders;
-        $order->cid = $customer->id;
+        $order           = new Orders;
+        $order->fname    = $request->getParam('fname');
+        $order->lname    = $request->getParam('lname');
+        $order->email    = $request->getParam('email');
+        $order->phone    = $request->getParam('phone');
+        $order->city     = $request->getParam('city');
+        $order->company  = $request->getParam('company');
+        $order->address1 = $request->getParam('address1');
+        $order->address2 = $request->getParam('address2');
         $order->save();
 
         foreach ($_SESSION['cart'] as $item) {

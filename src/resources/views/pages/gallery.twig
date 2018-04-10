@@ -14,7 +14,7 @@
         {% for image in images %}
             <div class="gallery__item">
                 <time>{{ image.created_at }}</time>
-                <img src="{{ base_url() }}/img/gallery/{{image.url}}">
+                <img src="{{ base_url() }}/img/gallery/{{image.url}}" alt="{{ image.description|slice(0,20) }}">
                 <p>{{ image.description }}</p>
             </div>
         {% endfor %}
@@ -27,5 +27,5 @@
         </div>
     </div>
 
-    <img src="{{ base_url() }}/img/misc/foot.png">
+    <img src="{{ base_url() }}/img/misc/foot.png" alt="Gallery bottom style">
 {% endblock %}

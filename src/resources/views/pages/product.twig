@@ -14,7 +14,7 @@
         {% if product %}
         <div class="product">
             <div class="product__item">
-                <div class="product__item__image"><img src="{{ base_url() }}/img/products/{{product.image}}"></div>
+                <div class="product__item__image"><img src="{{ base_url() }}/img/products/{{product.image}}" alt="{{product.title}}"></div>
             </div>
             <div class="product__item">
                 <div class="product__item__title">{{ product.title }}</div>
@@ -34,7 +34,7 @@
             {% for relatedProduct in relatedProducts %}
             <div class="related-products__item">
                 <div class="related-products__item__image">
-                    <img src="{{ base_url() }}/img/products/{{relatedProduct.image}}">
+                    <img src="{{ base_url() }}/img/products/{{relatedProduct.image}}" alt="{{relatedProduct.title}}">
                 </div>
                 <h3 class="related-products__item__title">
                     {{relatedProduct.title}}

@@ -6,59 +6,71 @@
     <div class="orders">
         {% for order in orders %}
         <div class="order">
-            <div class="order__item order__full black">
-                <span>#{{loop.index}}</span>
+            <div class="order__item full header">
+                <span>#{{order.id}}</span>
+                <span>{{order.date}}</span>
+                <form action="{{ path_for('admin.orders') }}/{{order.id}}" method="post">
+                    <input type="hidden" name="_METHOD" value="PUT">
+                    <button>Done</button>
+                    {{ csrf_field | raw }}
+                </form>
             </div>
 
-            <div class="order__item order__full">
-                <span class="order__label">Name:</span>
+            <div class="order__item full">
+                <span class="label">Name:</span>
                 <span class="">{{order.fname}} {{order.lname}}</span>
             </div>
 
-            <div class="order__item order__email">
-                <span class="order__label">Email:</span>
+            <div class="order__item">
+                <span class="label">Email:</span>
                 <span class="">{{order.email}}</span>
             </div>
 
-            <div class="order__item order__phone">
-                <span class="order__label">Phone:</span>
+            <div class="order__item">
+                <span class="label">Phone:</span>
                 <span class="">{{order.phone}}</span>
             </div>
 
-            <div class="order__item order__city">
-                <span class="order__label">City:</span>
+            <div class="order__item">
+                <span class="label">City:</span>
                 <span class="">{{order.city}}</span>
             </div>
 
-            <div class="order__item order__company">
-                <span class="order__label">Company:</span>
+            <div class="order__item">
+                <span class="label">Company:</span>
                 <span class="">{{order.company}}</span>
             </div>
 
-            <div class="order__item order__full">
-                <span class="order__label">Address:</span>
+            <div class="order__item full">
+                <span class="label">Address:</span>
                 <span class="">{{order.address1}} <br> {{order.address2}}</span>
             </div>
 
-            <div class="order__orders order__full">
-                <div class="items">
-                        <span><b>Title</b></span>
-                        <span><b>Quantity</b></span>
-                        <span><b>Price</b></span>
+            <div class="order__item full list">
+                <div class="items-head">
+                    <span><b>#</b></span>
+                    <span><b>Title</b></span>
+                    <span><b>Quantity</b></span>
+                    <span><b>Price</b></span>
+                    <span><b>Total</b></span>
+                </div>
+                <div class="items-list">
+                    {% set total = 0 %}
                     {% for item in order.items %}
-                        <span>{{ item.title }}</span>
-                        <span>{{item.quantity }}</span>
-                        <span>{{ item.price }}</span>
+                    {% set total = total + item.total %}
+                    <span>{{ loop.index }}</span>
+                    <span>{{ item.title }}</span>
+                    <span>{{ item.quantity }}</span>
+                    <span>{{ item.price }}</span>
+                    <span>{{ item.total }}</span>
                     {% endfor %}
                 </div>
-                <div class="total">
-                    <b>Total:</b> {{ order.total }}
+                <div class="items-total">
+                    <span><b>Grand Total:</b></span>
+                    <span><u>{{ total }}</u></span>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
-<style>
-
-</style>
 {% endblock %}

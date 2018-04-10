@@ -46,6 +46,7 @@ $app->group('/admin', function () {
     $this->delete('/slider/{id}', '\App\Controllers\Admin\Slider:deleteSlide');
     //-- orders
     $this->get('/orders', '\App\Controllers\Admin\Orders:index')->setName('admin.orders');
+    $this->put('/orders/{id}', '\App\Controllers\Admin\Orders:done');
     //-- hairreplacement
     $this->get('/hairreplacement', '\App\Controllers\Admin\HairReplacement:index')->setName('admin.hairreplacement');
     $this->post('/hairreplacement', '\App\Controllers\Admin\HairReplacement:update');

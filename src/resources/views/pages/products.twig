@@ -21,7 +21,7 @@
             </div>
             {% for product in products %}
             <a href="{{path_for('products')}}/{{product.id}}" class="products__item">
-                <div class="products__item__image"><img src="{{ base_url() }}/img/products/{{product.image}}"></div>
+                <div class="products__item__image"><img src="{{ base_url() }}/img/products/{{product.image}}" alt="{{product.title}}"></div>
                 <div class="products__item__title">{{ product.title }}</div>
                 <div class="products__item__price">{{ product.price }} <b>AFN</b></div>
                 <div class="products__item__description">{{ product.description }}</div>

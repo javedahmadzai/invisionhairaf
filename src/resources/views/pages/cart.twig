@@ -22,7 +22,7 @@
                 <div class="cart__item__box"><a href="{{ path_for('cart') }}/{{item.id}}">&#10006;</a></div>
                 <div class="cart__item__product">
                     <div class="cart__item__product__image">
-                        <img src="{{ base_url() }}/img/products/{{item.image}}">
+                        <img src="{{ base_url() }}/img/products/{{item.image}}" alt="{{item.title}}">
                     </div>
                     <div class="cart__item__product__title">{{item.title}}</div>
                 </div>

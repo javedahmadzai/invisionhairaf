@@ -90,7 +90,7 @@
         <a data-u="any" href="#" style="display:none">Full Width Slider</a>
         {% for slide in gslider  %}
             <div>
-                <img data-u="image" src="{{ base_url() }}/img/slider/{{slide.image}}">
+                <img data-u="image" src="{{ base_url() }}/img/slider/{{slide.image}}" alt="{{slider.title}}">
                 <div class="slider--heading">{{slide.title}}</div>
                 <div class="slider--content">{{slide.description}}</div>
             </div>
