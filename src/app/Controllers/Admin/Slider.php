@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\Controller;
 use App\Models\Slider as Slides;
+use ImageOptimizer\OptimizerFactory;
 
 class Slider extends Controller
 {
@@ -34,6 +35,9 @@ class Slider extends Controller
         $filename  = sprintf('%s.%0.8s', $basename, $extension);
 
         $image->moveTo($this->settings['slider_path'] . DIRECTORY_SEPARATOR . $filename);
+
+        $optimizer = (new OptimizerFactory)->get();
+        $optimizer->optimize($this->settings['slider_path'] . DIRECTORY_SEPARATOR . $filename);
 
         $slide              = new Slides;
         $slide->title       = $request->getParam('title');
